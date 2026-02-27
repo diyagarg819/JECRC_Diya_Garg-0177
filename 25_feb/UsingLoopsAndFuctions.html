@@ -1,0 +1,186 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+   <title>Capgemini Complete JS Practice</title> 
+   <style> 
+       body { font-family: Arial; padding:20px; background:#f2f2f2; } 
+       button { margin:5px; padding:8px 12px; } 
+       #output { margin-top:20px; padding:10px; background:white; min-height:150px; } 
+   </style> 
+</head> 
+<body> 
+ 
+<h1>Capgemini JavaScript Complete Practice</h1> 
+ 
+<button onclick="variableDemo()">Variables</button> 
+<button onclick="dataTypeDemo()">Data Types</button> 
+<button onclick="typeConversionDemo()">Type Conversion</button> 
+<button onclick="loopDemo()">Loops</button> 
+<button onclick="loopProblems()">Loop Problems</button> 
+<button onclick="functionDemo()">Functions</button> 
+ 
+<div id="output"></div> 
+ 
+<script> 
+ 
+// Reusable Output Functions 
+function print(msg) { 
+   document.getElementById("output").innerHTML += msg + "<br>"; 
+} 
+function clearOutput() { 
+   document.getElementById("output").innerHTML = ""; 
+} 
+ 
+// 1️⃣ Variables 
+function variableDemo() { 
+   clearOutput(); 
+ 
+   var name = "Alice"; 
+   var name = "Bob"; // allowed 
+ 
+   let age = 25; 
+   const country = "India"; 
+ 
+   print("var redeclared: " + name); 
+   print("let value: " + age); 
+   print("const value: " + country); 
+} 
+ 
+// 2️⃣ Data Types 
+function dataTypeDemo() { 
+   clearOutput(); 
+ 
+   let num = 100; 
+   let str = "Hello"; 
+   let bool = true; 
+   let arr = [1,2,3]; 
+   let obj = {name:"Rahul", age:22}; 
+ 
+   print(typeof num); 
+   print(typeof str); 
+   print(typeof bool); 
+   print(typeof arr);   // object 
+   print(typeof obj); 
+} 
+ 
+// 3️⃣ Type Conversion 
+function typeConversionDemo() { 
+   clearOutput(); 
+ 
+   let x = "50"; 
+   let converted = Number(x); 
+ 
+   print("Explicit: " + converted + " Type: " + typeof converted); 
+   print("Coercion '5' + 2 = " + ("5" + 2)); 
+   print("Coercion '5' - 2 = " + ("5" - 2)); 
+} 
+ 
+// 4️⃣ All Loops Demo 
+function loopDemo() { 
+   clearOutput(); 
+ 
+   print("FOR LOOP"); 
+   for(let i=1;i<=3;i++){ 
+       print(i); 
+   } 
+ 
+   print("<br>WHILE LOOP"); 
+   let i=1; 
+   while(i<=3){ 
+       print(i); 
+       i++; 
+   } 
+ 
+   print("<br>DO-WHILE LOOP"); 
+   let j=1; 
+   do{ 
+       print(j); 
+       j++; 
+   }while(j<=3); 
+ 
+   print("<br>FOR...OF (Array)"); 
+   let arr=[10,20,30]; 
+   for(let value of arr){ 
+       print(value); 
+   } 
+ 
+   print("<br>FOR...IN (Object)"); 
+   let obj={name:"Amit",age:25}; 
+   for(let key in obj){ 
+       print(key + " : " + obj[key]); 
+   } 
+} 
+ 
+// 5️⃣ Loop-Based Problem Solving 
+function loopProblems() { 
+   clearOutput(); 
+ 
+   // Factorial 
+   let num=5; 
+   let fact=1; 
+   for(let i=1;i<=num;i++){ 
+       fact*=i; 
+   } 
+   print("Factorial of 5: " + fact); 
+ 
+   // Prime check 
+   let n=7; 
+   let isPrime=true; 
+   for(let i=2;i<n;i++){ 
+       if(n%i===0){ 
+           isPrime=false; 
+           break; 
+       } 
+   } 
+   print("7 is Prime? " + isPrime); 
+ 
+   // Reverse String 
+   let str="Capgemini"; 
+   let rev=""; 
+   for(let char of str){ 
+       rev = char + rev; 
+   } 
+   print("Reversed String: " + rev); 
+} 
+ 
+// 6️⃣ Functions 
+function functionDemo() { 
+   clearOutput(); 
+ 
+   // Function Declaration 
+   function add(a,b){ 
+       return a+b; 
+   } 
+   print("Addition: " + add(10,20)); 
+ 
+   // Function Expression 
+   const multiply = function(a,b){ 
+       return a*b; 
+   }; 
+   print("Multiplication: " + multiply(5,4)); 
+ 
+   // Default Parameter 
+   function greet(name="Guest"){ 
+       return "Hello " + name; 
+   } 
+   print(greet()); 
+   print(greet("Rahul")); 
+ 
+   // Reusable Function 
+   print("Even Numbers till 10:"); 
+   printEven(10); 
+} 
+ 
+// Reusable Function 
+function printEven(limit){ 
+   for(let i=1;i<=limit;i++){ 
+       if(i%2===0){ 
+           print(i); 
+       } 
+   } 
+} 
+ 
+</script> 
+ 
+</body> 
+</html>

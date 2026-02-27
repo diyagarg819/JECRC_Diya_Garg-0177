@@ -1,0 +1,3 @@
+interface can't contain : Constants  , Feilds , operators , Constructors and destructors
+Access specifier can be applied to its members
+All interface members are public.

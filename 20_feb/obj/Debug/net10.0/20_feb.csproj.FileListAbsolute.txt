@@ -1,0 +1,14 @@
+C:\Users\Dell\Desktop\Window\20_feb\bin\Debug\net10.0\20_feb.exe
+C:\Users\Dell\Desktop\Window\20_feb\bin\Debug\net10.0\20_feb.deps.json
+C:\Users\Dell\Desktop\Window\20_feb\bin\Debug\net10.0\20_feb.runtimeconfig.json
+C:\Users\Dell\Desktop\Window\20_feb\bin\Debug\net10.0\20_feb.dll
+C:\Users\Dell\Desktop\Window\20_feb\bin\Debug\net10.0\20_feb.pdb
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.AssemblyInfo.cs
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.dll
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\refint\20_feb.dll
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.pdb
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\20_feb.genruntimeconfig.cache
+C:\Users\Dell\Desktop\Window\20_feb\obj\Debug\net10.0\ref\20_feb.dll

@@ -1,0 +1,14 @@
+C:\Users\Dell\Desktop\Window\1darray\bin\Debug\net10.0\1darray.exe
+C:\Users\Dell\Desktop\Window\1darray\bin\Debug\net10.0\1darray.deps.json
+C:\Users\Dell\Desktop\Window\1darray\bin\Debug\net10.0\1darray.runtimeconfig.json
+C:\Users\Dell\Desktop\Window\1darray\bin\Debug\net10.0\1darray.dll
+C:\Users\Dell\Desktop\Window\1darray\bin\Debug\net10.0\1darray.pdb
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.AssemblyInfo.cs
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.dll
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\refint\1darray.dll
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.pdb
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\1darray.genruntimeconfig.cache
+C:\Users\Dell\Desktop\Window\1darray\obj\Debug\net10.0\ref\1darray.dll

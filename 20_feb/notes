@@ -1,0 +1,4 @@
+Collection-hashTable,stach,Queue,ArrayList
+5 types of collections - generic , non-generic,specalised , concurrent,bit-based
+generic collections are type safe
+generic allow you tp wrte a class or method that can work with any tupe of data

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Variable</title>
+</head>
+<body>
+    <h1>Using Variable</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga error voluptatum, tempora pariatur soluta ex dolorum porro praesentium iure obcaecati? Recusandae maxime fugit aliquam esse placeat. Illum tenetur aspernatur omnis?</p>
+    <p id = "outputgreeting"></p>
+    <script>
+        var greeting = "Welcome  to Javascript";
+        console.log(greeting);
+        let name = "john";
+        console.log("hello" + name + "!" );
+        document.getElementById("outputgreeting").innerHTML = greeting + " " + name ;
+
+        var comapany = "Capgemini";
+        let companylocation = "Banglore";
+        const year = 2024;
+
+        if(true){
+            var comapany = "TCS"; // overirdes
+            let companylocation = "Mumbai"; //block-scoped
+            console.log("Inside block : " + comapany + "," + location + "," + year);
+        }
+
+        console.log("Outside block : " + comapany + "," + location + "," + year);
+        
+        function testVar(){
+            var name = "Charlie";
+            console.log(name);
+        }
+        testVar();
+        console.log(name);
+    
+
+        //Primitive DataType
+
+        let name2 = "david";
+        let age = 30;
+        let isStudent = false;
+        let salary;
+        let bonus = null;
+        let bignumber = 900176452887677n;
+
+        console.log(typeof(name2));
+        console.log(typeof(age));
+        console.log(typeof(isStudent));
+        console.log(typeof(salary));
+        console.log(typeof(bonus));
+        console.log(typeof(bignumber));
+
+        //Non-Primitive
+
+        let person = {name : "Eve" , age : 25};
+        let numbers = [1,2,3,4,5];
+        let today = new Date();
+
+        function greet(){
+            return "Welcome";
+        }
+
+        console.log(typeof person);
+        console.log(typeof numbers);
+        console.log(typeof today);
+        console.log(typeof greet);
+        
+
+
+        </script>
+</body>
+</html>

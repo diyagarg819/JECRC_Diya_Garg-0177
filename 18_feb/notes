@@ -1,0 +1,5 @@
+Access specifiers- public,private,protected,internal ,protected internal
+Multiple  inheritance is not achieved directly but usind interfaces 
+Every time yo write name of interface startwith i
+for inheriting inheritance you have to implement {ctrl+.} or write the exception code
+sealed class cannot be inherited
