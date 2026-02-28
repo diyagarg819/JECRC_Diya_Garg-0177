@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\c_sharp\\Product_Management_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A6BA824-44B2-49D8-B289-63BBFB5A074B}|Product_Management_System\\Product_Management_System.csproj|e:\\c_sharp\\product_management_system\\product_management_system\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A6BA824-44B2-49D8-B289-63BBFB5A074B}|Product_Management_System\\Product_Management_System.csproj|solutionrelative:product_management_system\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A6BA824-44B2-49D8-B289-63BBFB5A074B}|Product_Management_System\\Product_Management_System.csproj|e:\\c_sharp\\product_management_system\\product_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A6BA824-44B2-49D8-B289-63BBFB5A074B}|Product_Management_System\\Product_Management_System.csproj|solutionrelative:product_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A6BA824-44B2-49D8-B289-63BBFB5A074B}|Product_Management_System\\Product_Management_System.csproj|e:\\c_sharp\\product_management_system\\product_management_system\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A6BA824-44B2-49D8-B289-63BBFB5A074B}|Product_Management_System\\Product_Management_System.csproj|solutionrelative:product_management_system\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "E:\\c_sharp\\Product_Management_System\\Product_Management_System\\ProductService.cs",
+              "RelativeDocumentMoniker": "Product_Management_System\\ProductService.cs",
+              "ToolTip": "E:\\c_sharp\\Product_Management_System\\Product_Management_System\\ProductService.cs",
+              "RelativeToolTip": "Product_Management_System\\ProductService.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAxwKMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T09:02:41.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductModel.cs",
+              "DocumentMoniker": "E:\\c_sharp\\Product_Management_System\\Product_Management_System\\ProductModel.cs",
+              "RelativeDocumentMoniker": "Product_Management_System\\ProductModel.cs",
+              "ToolTip": "E:\\c_sharp\\Product_Management_System\\Product_Management_System\\ProductModel.cs",
+              "RelativeToolTip": "Product_Management_System\\ProductModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:59:18.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\c_sharp\\Product_Management_System\\Product_Management_System\\Program.cs",
+              "RelativeDocumentMoniker": "Product_Management_System\\Program.cs",
+              "ToolTip": "E:\\c_sharp\\Product_Management_System\\Product_Management_System\\Program.cs",
+              "RelativeToolTip": "Product_Management_System\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T08:52:44.87Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
