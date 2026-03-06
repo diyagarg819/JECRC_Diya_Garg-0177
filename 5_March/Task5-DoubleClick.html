@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Double Click to Like Product</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+img{
+    cursor:pointer;
+    border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Product Like Feature</h2>
+
+<img id="product" src="https://via.placeholder.com/200">
+
+<p>Likes: <span id="count">0</span></p>
+
+</div>
+
+<script>
+
+let likes = 0;
+
+document.getElementById("product").addEventListener("dblclick", function(){
+
+    likes++;
+
+    document.getElementById("count").innerText = likes;
+
+    console.log("Product liked", likes);
+
+});
+
+</script>
+
+</body>
+
+</html>

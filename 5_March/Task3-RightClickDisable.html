@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Secure Banking App Right Click Disable</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Secure Banking Application</h2>
+<p>Right click is disabled for security reasons.</p>
+
+</div>
+
+<script>
+
+document.addEventListener("contextmenu", function(e){
+
+    e.preventDefault();
+
+    console.warn("Right click disabled for security");
+
+});
+
+</script>
+
+</body>
+
+</html>

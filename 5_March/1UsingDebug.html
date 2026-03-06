@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Console Methods Demo</title>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .log { background-color: #4e73df; color: white; }
+        .info { background-color: #36b9cc; color: white; }
+        .warn { background-color: #f6c23e; color: black; }
+        .error { background-color: #e74a3b; color: white; }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .instruction {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+
+
+<div class="container">
+    <h1>Console Methods Demo</h1>
+    <button class="log" onclick="console.log('This is a log message')">Log</button>
+    <button class="info" onclick="console.info('This is an info message')">Info</button>
+    <button class="warn" onclick="console.warn('This is a warning message')">Warn</button>
+    <button class="error" onclick="console.error('This is an error message')">Error</button>
+
+    <div class="instruction">
+        Open the browser console to see the messages when you click the buttons.
+    </div>
+
+</div>
+
+</html>

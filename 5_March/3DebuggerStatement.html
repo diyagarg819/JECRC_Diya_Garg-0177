@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+   <meta charset="UTF-8"> 
+   <title>Debugger Statement Demo</title> 
+ 
+   <style> 
+       body { 
+           font-family: Arial, sans-serif; 
+           background: linear-gradient(to right, #ff7e5f, #feb47b); 
+           margin: 0; 
+           padding: 0; 
+           text-align: center; 
+           color: white; 
+       } 
+ 
+       .container { 
+           margin-top: 100px; 
+       } 
+ 
+       h1 { 
+           margin-bottom: 20px; 
+       } 
+ 
+       button { 
+           padding: 12px 20px; 
+           border: none; 
+           border-radius: 8px; 
+           cursor: pointer; 
+           font-size: 16px; 
+           background-color: #343a40; 
+           color: white; 
+           transition: 0.3s; 
+       } 
+ 
+       button:hover { 
+           transform: scale(1.05); 
+           opacity: 0.9; 
+       } 
+ 
+       .note { 
+           margin-top: 25px; 
+           font-size: 18px; 
+       } 
+   </style> 
+</head> 
+<body> 
+ 
+   <div class="container"> 
+       <h1>JavaScript Debugger Example</h1> 
+       <button onclick="runCalculation()">Calculate Total</button> 
+ 
+       <div class="note"> 
+        Open Developer Tools (F12) → Go to Sources → Click Button   
+          Execution will pause at the debugger line. 
+       </div> 
+   </div> 
+ 
+   <script> 
+       function calculateTotal(price, tax) { 
+           debugger; // Execution pauses here 
+           const taxAmount = price * tax; 
+           const total = price + taxAmount; 
+           return total; 
+       } 
+ 
+       function runCalculation() { 
+           const result = calculateTotal(100, 0.1); 
+           console.log("Total Amount:", result); 
+       } 
+   </script> 
+ 
+</body> 
+</html>

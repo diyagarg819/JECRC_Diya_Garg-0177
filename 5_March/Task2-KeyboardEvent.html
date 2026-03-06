@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Login Form Keyboard Event</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+input{
+    padding:10px;
+    width:200px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Login Form</h2>
+
+<input type="text" id="username" placeholder="Enter username">
+
+</div>
+
+
+<script>
+
+document.getElementById("username").addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        console.log("Login attempt triggered");
+
+        alert("Submitting login form");
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+   <meta charset="UTF-8"> 
+   <title>Advanced Console Methods</title> 
+ 
+   <style> 
+       body { 
+           font-family: Arial, sans-serif; 
+           background: linear-gradient(to right, #667eea, #764ba2); 
+           margin: 0; 
+           padding: 0; 
+           text-align: center; 
+           color: white; 
+       } 
+ 
+       .container { 
+           margin-top: 80px; 
+       } 
+ 
+       h1 { 
+           margin-bottom: 30px; 
+       } 
+ 
+       button { 
+           padding: 12px 18px; 
+           margin: 10px; 
+           border: none; 
+           border-radius: 8px; 
+           cursor: pointer; 
+           font-size: 15px; 
+           transition: 0.3s; 
+       } 
+ 
+       .table { background-color: #20c997; color: white; } 
+       .group { background-color: #17a2b8; color: white; } 
+       .time { background-color: #ffc107; color: black; } 
+       .trace { background-color: #dc3545; color: white; } 
+ 
+       button:hover { 
+           transform: scale(1.05); 
+           opacity: 0.9; 
+       } 
+ 
+       .note { 
+           margin-top: 30px; 
+           font-size: 18px; 
+       } 
+   </style> 
+</head> 
+<body> 
+ 
+   <div class="container"> 
+       <h1>Advanced JavaScript Console Methods</h1> 
+ 
+       <button class="table" onclick="showTable()">Console Table</button> 
+       <button class="group" onclick="showGroup()">Console Group</button> 
+       <button class="time" onclick="measureTime()">Console Time</button> 
+       <button class="trace" onclick="showTrace()">Console Trace</button> 
+ 
+       <div class="note"> 
+        Press F12 → Go to Console to view results 
+       </div> 
+   </div> 
+ 
+   <script> 
+       // Table display for arrays/objects 
+       function showTable() { 
+           const users = [ 
+               { name: 'John', age: 30 }, 
+               { name: 'Jane', age: 25 } 
+           ]; 
+           console.table(users); 
+       } 
+ 
+       // Group related logs 
+       function showGroup() { 
+           console.group('User Details'); 
+           console.log('Name: John'); 
+           console.log('Age: 30'); 
+           console.groupEnd(); 
+       } 
+ 
+       // Timing operations 
+       function measureTime() { 
+           console.time('loop'); 
+           for (let i = 0; i < 1000000; i++) {} 
+           console.timeEnd('loop'); 
+       } 
+ 
+       // Stack trace 
+       function showTrace() { 
+           console.trace('Trace called'); 
+       } 
+   </script> 
+ 
+</body> 
+</html>

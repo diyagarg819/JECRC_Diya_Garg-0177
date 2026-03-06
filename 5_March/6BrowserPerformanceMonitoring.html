@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance Monitoring Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            background-color: #ffc107;
+            color: black;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .note {
+            margin-top: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript Performance & FPS Monitoring</h1>
+
+        <button onclick="checkMemory()">Check Memory Usage</button>
+        <button onclick="measureTask()">Measure Task Duration</button>
+        <button onclick="startFPS()">Start FPS Monitor</button>
+
+        <div class="note">
+        Open Developer Tools (F12 → Console) to view performance logs
+        </div>
+    </div>
+
+    <script>
+        // 🔹 Memory Usage
+        function checkMemory() {
+            if (performance.memory) {
+                console.log('Memory usage:', performance.memory);
+            } else {
+                console.warn('performance.memory is not supported in this browser.');
+            }
+        }
+
+        // 🔹 Performance Marks & Measures
+        function measureTask() {
+            performance.mark('startTask');
+
+            // Simulated heavy task
+            for (let i = 0; i < 10000000; i++) {}
+
+            performance.mark('endTask');
+            performance.measure('taskDuration', 'startTask', 'endTask');
+
+            const measures = performance.getEntriesByType('measure');
+            console.log('Task duration:', measures);
+        }
+
+        // 🔹 Frame Rate Monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        let isRunning = false;
+
+        function checkFrameRate() {
+            if (!isRunning) return;
+
+            frameCount++;
+            const now = performance.now();
+            const delta = now - lastTime;
+
+            if (delta >= 1000) {
+                const fps = frameCount / (delta / 1000);
+                console.log(`FPS: ${fps.toFixed(2)}`);
+                frameCount = 0;
+                lastTime = now;
+            }
+
+            requestAnimationFrame(checkFrameRate);
+        }
+
+        function startFPS() {
+            if (!isRunning) {
+                isRunning = true;
+                console.log("FPS Monitoring Started...");
+                requestAnimationFrame(checkFrameRate);
+            }
+        }
+    </script>
+
+</body>
+</html>

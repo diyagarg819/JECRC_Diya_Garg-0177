@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Remote Logging Demo</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #ffc107;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.note {
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>Remote Debugging & Logging</h1>
+
+<button onclick="generateLogs()">Generate Logs</button>
+<button onclick="forceFlush()">Force Flush</button>
+
+<div class="note">
+Open F12 → Console → Network Tab to see log requests
+</div>
+
+<script>
+class RemoteLogger {
+  constructor(endpoint) {
+    this.endpoint = endpoint;
+    this.buffer = [];
+    this.flushInterval = setInterval(() => this.flush(), 5000);
+  }
+  
+  log(level, ...args) {
+    const entry = {
+      timestamp: new Date().toISOString(),
+      level,
+      message: args.map(arg => 
+        typeof arg === 'object' ? JSON.stringify(arg) : arg
+      ).join(' '),
+      url: window.location.href,
+      userAgent: navigator.userAgent
+    };
+    
+    this.buffer.push(entry);
+
+    console.log("Buffered log:", entry);
+
+    if (this.buffer.length >= 5) {
+      this.flush();
+    }
+  }
+  
+  async flush() {
+    if (this.buffer.length === 0) return;
+    
+    const logs = [...this.buffer];
+    this.buffer = [];
+    
+    try {
+      console.log("Sending logs to server...", logs);
+
+      await fetch(this.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(logs)
+      });
+
+      console.log("Logs sent successfully.");
+    } catch (error) {
+      console.error('Failed to send logs:', error);
+    }
+  }
+}
+
+// Using public test endpoint for demo
+const logger = new RemoteLogger("https://jsonplaceholder.typicode.com/posts");
+
+function generateLogs() {
+  logger.log("INFO", "Application started");
+  logger.log("DEBUG", { userId: 1, name: "John" });
+  logger.log("WARN", "Low memory warning");
+  logger.log("ERROR", "Unexpected crash occurred");
+}
+
+function forceFlush() {
+  logger.flush();
+}
+</script>
+
+</body>
+</html>

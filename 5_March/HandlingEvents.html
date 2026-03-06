@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Events Demo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    padding:40px;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+}
+
+h2{
+    text-align:center;
+}
+
+.buttons{
+    margin-bottom:20px;
+}
+
+button{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    background:#007bff;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+#mouseArea{
+    width:100%;
+    height:150px;
+    background:#e9ecef;
+    border:2px dashed #999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+}
+
+#log{
+    margin-top:20px;
+    background:white;
+    border:1px solid #ddd;
+    padding:10px;
+    height:200px;
+    overflow:auto;
+}
+
+.log-item{
+    padding:3px 0;
+    border-bottom:1px solid #eee;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>JavaScript Event Handling Demo</h2>
+
+<div class="buttons">
+<button id="clickBtn">Click Event</button>
+<button id="dblClickBtn">Double Click Event</button>
+</div>
+
+<div id="mouseArea">
+Move Mouse Here
+</div>
+
+<p><b>Keyboard Event:</b> Press any key on keyboard</p>
+
+<div id="log"></div>
+
+</div>
+
+<script>
+
+// log function
+function logEvent(message){
+    const logDiv = document.getElementById("log");
+    const item = document.createElement("div");
+    item.className = "log-item";
+    item.textContent = message;
+    logDiv.prepend(item);
+
+    console.log(message);
+}
+
+
+// CLICK EVENT
+document.getElementById("clickBtn").addEventListener("click", function(){
+    logEvent("Click Event Triggered");
+});
+
+
+// DOUBLE CLICK EVENT
+document.getElementById("dblClickBtn").addEventListener("dblclick", function(){
+    logEvent("Double Click Event Triggered");
+});
+
+
+// MOUSE EVENTS
+const mouseArea = document.getElementById("mouseArea");
+
+mouseArea.addEventListener("mouseover", function(){
+    logEvent("Mouse Over Event");
+});
+
+mouseArea.addEventListener("mouseout", function(){
+    logEvent("Mouse Out Event");
+});
+
+mouseArea.addEventListener("mousemove", function(event){
+    logEvent("Mouse Move : X=" + event.clientX + " Y=" + event.clientY);
+});
+
+mouseArea.addEventListener("mousedown", function(){
+    logEvent("Mouse Down Event");
+});
+
+mouseArea.addEventListener("mouseup", function(){
+    logEvent("Mouse Up Event");
+});
+
+mouseArea.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+    logEvent("Right Click (Context Menu) Event");
+});
+
+
+// KEYBOARD EVENTS
+document.addEventListener("keydown", function(e){
+    logEvent("Key Down : " + e.key);
+});
+
+document.addEventListener("keypress", function(e){
+    logEvent("Key Press : " + e.key);
+});
+
+document.addEventListener("keyup", function(e){
+    logEvent("Key Up : " + e.key);
+});
+
+</script>
+
+</body>
+</html>

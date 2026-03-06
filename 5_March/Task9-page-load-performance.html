@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Monitor Page Load Performance</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h2>Page Load Performance Monitor</h2>
+<p>Open the browser console to see load time logs.</p>
+</div>
+
+<script>
+
+// Logger utility
+const logger = {
+log:function(level,message,data){
+console.log(`[${level}] ${message}`, data);
+}
+};
+
+
+// Start time when script begins
+const start = performance.now();
+
+
+window.onload = function(){
+
+const end = performance.now();
+
+const loadTime = end - start;
+
+logger.log("INFO","Page Load Time:", loadTime + " ms");
+
+};
+
+</script>
+
+</body>
+
+</html>

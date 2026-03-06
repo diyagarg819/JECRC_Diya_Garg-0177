@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Button Click Analytics</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+button{
+    padding:10px 18px;
+    margin:10px;
+    border:none;
+    background:#007bff;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Product Page</h2>
+
+<button onclick="trackClick('Buy Now')">Buy Now</button>
+<button onclick="trackClick('Add Wishlist')">Add Wishlist</button>
+
+</div>
+
+
+<script>
+
+// simple logger utility
+const logger = {
+
+log:function(level,message,data){
+
+console.log(`[${level}] ${message}`, data);
+
+}
+
+};
+
+function trackClick(action){
+
+logger.log("INFO","User Action:",action);
+
+}
+
+</script>
+
+</body>
+
+</html>

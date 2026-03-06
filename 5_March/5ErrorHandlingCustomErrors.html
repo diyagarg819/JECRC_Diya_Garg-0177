@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Handling Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            margin: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            background-color: #343a40;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .note {
+            margin-top: 25px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript Error Handling Demo</h1>
+
+        <input type="text" id="username" placeholder="Enter username">
+        <br>
+        <button onclick="runValidation()">Submit</button>
+
+        <div class="note">
+        Open Developer Tools (F12 → Console) to see error details
+        </div>
+    </div>
+
+    <script>
+        // Custom Error Class
+        class ValidationError extends Error {
+            constructor(message) {
+                super(message);
+                this.name = 'ValidationError';
+            }
+        }
+
+        function riskyOperation() {
+            const username = document.getElementById("username").value;
+
+            if (!username) {
+                throw new ValidationError("Username cannot be empty!");
+            }
+
+            if (username.length < 4) {
+                throw new ValidationError("Username must be at least 4 characters long.");
+            }
+
+            return "User validated successfully!";
+        }
+
+        function cleanup() {
+            console.log("Cleanup completed.");
+        }
+
+        function runValidation() {
+            try {
+                const result = riskyOperation();
+                console.log(result);
+            } catch (error) {
+                console.error("Caught error:", error);
+                console.error("Error name:", error.name);
+                console.error("Error message:", error.message);
+                console.error("Stack trace:", error.stack);
+            } finally {
+                cleanup();
+            }
+        }
+    </script>
+
+</body>
+</html>
