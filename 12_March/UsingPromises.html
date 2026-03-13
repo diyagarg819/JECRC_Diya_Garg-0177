@@ -1,0 +1,72 @@
+<script type="module">    
+    //Using Import/Export Project 1 (Utils module) math.js
+    const Utils =`
+    export const PI = 3.14159;
+    export function add(a, b) {
+        return a + b;
+    }
+    export function subtract(a, b) {
+        return a - b;
+    }
+    export function multiply(a, b) {
+        return a * b;
+    }
+    export function divide(a, b) {
+        if (b === 0) {
+            throw new Error('Cannot divide by zero');
+        }
+        return a / b;
+    }
+    `;
+
+const blob = new Blob([Utils], { type: 'text/javascript' });
+const url = URL.createObjectURL(blob);
+
+// Dynamically import the Utils module app.js and Promise example
+import(url).then(module => {
+    window.claculate= function() {
+     const a= Number(document.getElementById('num1').value);
+     const b= Number(document.getElementById('num2').value);
+     const state= document.getElementById('state').value;
+     // Promise to perform calculation
+     const calculationPromise = new Promise((resolve, reject) => {
+       //Pending state
+       state.innerText="State: Pending...";
+       state.className="pending";
+       setTimeout(() => {
+        if(isNaN(a) || isNaN(b)) {
+            reject('Invalid input. Please enter valid numbers.');
+        } else {
+            resolve({
+                add: module.add(a, b),
+                subtract: module.subtract(a, b),
+                multiply: module.multiply(a, b),
+                divide: module.divide(a, b)
+            });
+        }
+         }, 2000); // Simulate async operation
+});
+
+//Fulfilled state
+calculationPromise.then(result => { 
+    state.innerText="State: Fulfilled";
+    state.className="fulfilled";
+    document.getElementById('addResult').innerText = `Add: ${result.add}`;
+    document.getElementById('subtractResult').innerText = `Subtract: ${result.subtract}`;
+    document.getElementById('multiplyResult').innerText = `Multiply: ${result.multiply}`;
+    document.getElementById('divideResult').innerText = `Divide: ${result.divide}`;
+}).catch(error => {
+    //Rejected state
+    state.innerText="State: Rejected";
+    state.className="rejected";
+    document.getElementById('addResult').innerText = '';
+    document.getElementById('subtractResult').innerText = '';
+    document.getElementById('multiplyResult').innerText = '';
+    document.getElementById('divideResult').innerText = '';
+    alert(error);
+});
+}
+}).catch(error => {
+    console.error('Error loading module:', error);
+});
+</script>

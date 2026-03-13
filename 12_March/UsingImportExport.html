@@ -1,0 +1,37 @@
+<script type="module">
+    // using Import/Export project 1 (utils module) math.js
+    const utils = `
+    export const PI = 3.14159;
+    export function add(a, b) {
+        return a + b;
+    }
+    export function subtract(a, b) {
+        return a - b;
+    }
+        export function multiply(a, b) {
+        return a * b;
+    }
+    export function divide(a, b) {
+        if (b === 0) {
+            throw new Error('Division by zero is not allowed');
+        }
+        return a / b;
+    }
+    `;
+
+    const blob = new Blob([utils], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+
+    // Dynamically import the utils module app.js
+    import(url).then(module => {
+        console.log('PI:', module.PI);
+        console.log('Add:', module.add(5, 3));
+        console.log('Subtract:', module.subtract(5, 3));
+        console.log('Multiply:', module.multiply(5, 3));
+        console.log('Divide:', module.divide(5, 3));
+    }).catch(error => {
+        console.error('Error loading module:', error);
+    });
+    //blob helps us to transport our data.
+</script>
+
