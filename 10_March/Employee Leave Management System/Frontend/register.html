@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Leave Management System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 380px;
+        }
+        h2 { text-align: center; color: #333; margin-bottom: 8px; }
+        .subtitle { text-align: center; color: #888; font-size: 14px; margin-bottom: 28px; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-size: 14px; font-weight: bold; color: #555; margin-bottom: 6px; }
+        input, select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            background: white;
+        }
+        input:focus, select:focus { border-color: #4a90e2; }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        button:hover { background: #218838; }
+        .message {
+            margin-top: 14px;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .footer-link { text-align: center; margin-top: 20px; font-size: 14px; color: #666; }
+        .footer-link a { color: #4a90e2; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Create Account</h2>
+        <p class="subtitle">Register to use the Leave Management System</p>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" />
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role">
+                <option value="Employee">Employee</option>
+                <option value="Manager">Manager</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </div>
+
+        <button onclick="register()">Register</button>
+
+        <div class="message" id="message"></div>
+
+        <div class="footer-link">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "https://localhost:5001";
+
+        async function register() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const role = document.getElementById("role").value;
+
+            if (!username || !password) {
+                showMessage("Please fill in all fields.", "error");
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/api/auth/register`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password, role })
+                });
+
+                const result = await response.text();
+
+                if (response.ok) {
+                    showMessage("Registration successful! Redirecting to login...", "success");
+                    setTimeout(() => {
+                        window.location.href = "login.html";
+                    }, 1500);
+                } else {
+                    showMessage(result || "Registration failed.", "error");
+                }
+            } catch (error) {
+                showMessage("Cannot connect to server. Make sure the API is running.", "error");
+            }
+        }
+
+        function showMessage(text, type) {
+            const el = document.getElementById("message");
+            el.textContent = text;
+            el.className = `message ${type}`;
+            el.style.display = "block";
+        }
+    </script>
+</body>
+</html>

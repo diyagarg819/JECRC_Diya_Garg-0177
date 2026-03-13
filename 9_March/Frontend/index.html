@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Todo App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  body.dark {
+    background: #1a1a2e;
+    color: #e0e0e0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  body.dark .header h1 { color: #e0e0e0; }
+
+  #darkToggle {
+    background: none;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #555;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #darkToggle:hover { border-color: #888; color: #222; }
+  body.dark #darkToggle { border-color: #555; color: #ccc; }
+  body.dark #darkToggle:hover { border-color: #aaa; color: #fff; }
+
+  /* Card */
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  }
+
+  body.dark .card {
+    background: #16213e;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+
+  /* Add task */
+  .add-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .add-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.2s;
+  }
+
+  .add-row input:focus { border-color: #4a90d9; }
+
+  body.dark .add-row input {
+    background: #0f3460;
+    border-color: #2a4a7f;
+    color: #e0e0e0;
+  }
+
+  .add-row input::placeholder { color: #aaa; }
+
+  .btn-add {
+    padding: 10px 18px;
+    background: #4a90d9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-add:hover { background: #357abd; }
+
+  /* Search */
+  #search {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    background: #fff;
+    color: #333;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+
+  #search:focus { border-color: #4a90d9; }
+  #search::placeholder { color: #aaa; }
+
+  body.dark #search {
+    background: #0f3460;
+    border-color: #2a4a7f;
+    color: #e0e0e0;
+  }
+
+  /* Filter buttons */
+  .filter-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    flex: 1;
+    padding: 8px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    color: #777;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover { border-color: #4a90d9; color: #4a90d9; }
+
+  .filter-btn.active {
+    background: #4a90d9;
+    border-color: #4a90d9;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  body.dark .filter-btn { border-color: #2a4a7f; color: #aaa; }
+  body.dark .filter-btn:hover { border-color: #4a90d9; color: #4a90d9; }
+
+  /* Task list */
+  #taskList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  #taskList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    padding: 12px 14px;
+    transition: border-color 0.2s;
+    animation: fadeIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  #taskList li:hover { border-color: #c5d8f0; }
+
+  body.dark #taskList li {
+    background: #16213e;
+    border-color: #2a4a7f;
+  }
+
+  body.dark #taskList li:hover { border-color: #4a90d9; }
+
+  /* Custom checkbox */
+  .task-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1.5px solid #bbb;
+    background: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    color: transparent;
+    transition: all 0.2s;
+  }
+
+  .task-check:hover { border-color: #4a90d9; }
+
+  li.completed .task-check {
+    background: #4a90d9;
+    border-color: #4a90d9;
+    color: #fff;
+  }
+
+  body.dark .task-check { background: #0f3460; border-color: #4a90d9; }
+
+  .task-text {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.2s;
+  }
+
+  body.dark .task-text { color: #ddd; }
+
+  li.completed .task-text {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+
+  /* Action buttons */
+  .task-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  li:hover .task-actions { opacity: 1; }
+
+  .task-btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #666;
+  }
+
+  .task-btn.edit:hover { border-color: #4a90d9; color: #4a90d9; background: #eef5fd; }
+  .task-btn.del:hover  { border-color: #e74c3c; color: #e74c3c; background: #fdf0ef; }
+
+  body.dark .task-btn { border-color: #2a4a7f; color: #aaa; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: #999;
+    padding: 0 2px;
+  }
+
+  .done-badge {
+    background: #eef5fd;
+    color: #4a90d9;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  body.dark .done-badge { background: #0f3460; }
+
+  /* Empty state */
+  .empty {
+    text-align: center;
+    padding: 36px 0;
+    color: #bbb;
+    font-size: 0.88rem;
+  }
+
+  /* Edit Modal */
+  #editModal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  #editModal.visible { opacity: 1; pointer-events: all; }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .modal-box {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(8px);
+    transition: transform 0.2s;
+  }
+
+  #editModal.visible .modal-box { transform: translateY(0); }
+  body.dark .modal-box { background: #16213e; }
+
+  .modal-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #2c3e50;
+  }
+
+  body.dark .modal-box h3 { color: #e0e0e0; }
+
+  .modal-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    background: #fff;
+    color: #333;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+
+  .modal-input:focus { border-color: #4a90d9; }
+  body.dark .modal-input { background: #0f3460; border-color: #2a4a7f; color: #e0e0e0; }
+
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+  .modal-cancel {
+    padding: 8px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .modal-cancel:hover { border-color: #aaa; color: #444; }
+
+  .modal-save {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #4a90d9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .modal-save:hover { background: #357abd; }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #2c3e50;
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    opacity: 0;
+    transition: all 0.25s;
+    z-index: 200;
+    white-space: nowrap;
+  }
+
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast-error { background: #e74c3c; }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📝 Todo App</h1>
+    <button id="darkToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </div>
+
+  <!-- Add Task -->
+  <div class="card">
+    <div class="add-row">
+      <input type="text" id="taskInput" placeholder="Add a new task..." autocomplete="off">
+      <button class="btn-add" onclick="addTask()">+ Add</button>
+    </div>
+  </div>
+
+  <!-- Search & Filter -->
+  <div class="card">
+    <input type="text" id="search" placeholder="🔍  Search tasks..." onkeyup="searchTask()">
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterTasks('all', this)">All</button>
+      <button class="filter-btn" onclick="filterTasks('active', this)">Active</button>
+      <button class="filter-btn" onclick="filterTasks('completed', this)">Completed</button>
+    </div>
+  </div>
+
+  <!-- Task List -->
+  <ul id="taskList"></ul>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span id="taskCount">0 tasks</span>
+    <span class="done-badge" id="completedCount">0 done</span>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  document.getElementById('taskInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') addTask();
+  });
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    document.getElementById('darkToggle').textContent =
+      document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
+</script>
+
+</body>
+</html>

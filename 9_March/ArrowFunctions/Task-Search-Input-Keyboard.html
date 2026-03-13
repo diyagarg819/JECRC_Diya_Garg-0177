@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Input Keyboard Event</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+}
+
+input{
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Search Product</h2>
+
+<input type="text" id="searchBox" placeholder="Search product">
+
+<script>
+document.getElementById("searchBox").addEventListener("keydown", (e) => {
+
+    if(e.key === "Enter"){
+
+        console.log("Search triggered");
+
+        alert("Searching product...");
+
+    }
+
+});
+</script>
+
+</body>
+</html>

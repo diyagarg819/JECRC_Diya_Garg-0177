@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Requests - Leave Management System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; }
+
+        .navbar {
+            background: #4a90e2;
+            color: white;
+            padding: 14px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 { font-size: 20px; }
+        .navbar-right { display: flex; align-items: center; gap: 16px; }
+        .back-btn, .logout-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .back-btn:hover, .logout-btn:hover { background: rgba(255,255,255,0.3); }
+
+        .container { padding: 30px; max-width: 1000px; margin: 0 auto; }
+        h2 { color: #333; margin-bottom: 24px; }
+
+        /* Employee list (Admin view) */
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th {
+            background: #4a90e2;
+            color: white;
+            padding: 12px 14px;
+            text-align: left;
+        }
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #f8f9ff; }
+
+        /* Status badges */
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .Pending  { background: #fff3cd; color: #856404; }
+        .Approved { background: #d4edda; color: #155724; }
+        .Rejected { background: #f8d7da; color: #721c24; }
+
+        /* Action buttons */
+        .btn-approve {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            margin-right: 6px;
+        }
+        .btn-approve:hover { background: #218838; }
+
+        .btn-reject {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .btn-reject:hover { background: #c82333; }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .btn-delete:hover { background: #c82333; }
+
+        .empty-msg {
+            text-align: center;
+            color: #888;
+            padding: 40px;
+            font-size: 15px;
+        }
+
+        .message {
+            margin-bottom: 16px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Leave Management System</h1>
+        <div class="navbar-right">
+            <a class="back-btn" href="dashboard.html">Back to Dashboard</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="pageTitle">Leave Requests</h2>
+        <div class="message" id="message"></div>
+
+        <div class="card">
+            <div id="tableContainer">
+                <p class="empty-msg">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "https://localhost:5001";
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+
+        if (!token) {
+            window.location.href = "login.html";
+        }
+
+        // Load data based on role
+        window.onload = function () {
+            if (role === "Employee") {
+                document.getElementById("pageTitle").textContent = "My Leave Requests";
+                loadMyLeaves();
+            } else if (role === "Manager") {
+                document.getElementById("pageTitle").textContent = "All Leave Requests";
+                loadAllLeaves();
+            } else if (role === "Admin") {
+                document.getElementById("pageTitle").textContent = "All Employees";
+                loadEmployees();
+            }
+        };
+
+        // Employee: Load own leave requests
+        async function loadMyLeaves() {
+            try {
+                const response = await fetch(`${API_URL}/api/leave/my-leaves`, {
+                    headers: { "Authorization": "Bearer " + token }
+                });
+                if (response.ok) {
+                    const leaves = await response.json();
+                    renderLeaveTable(leaves, false);
+                } else {
+                    handleAuthError(response.status);
+                }
+            } catch {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        // Manager: Load all leave requests
+        async function loadAllLeaves() {
+            try {
+                const response = await fetch(`${API_URL}/api/leave/all`, {
+                    headers: { "Authorization": "Bearer " + token }
+                });
+                if (response.ok) {
+                    const leaves = await response.json();
+                    renderLeaveTable(leaves, true);
+                } else {
+                    handleAuthError(response.status);
+                }
+            } catch {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        // Admin: Load all employees
+        async function loadEmployees() {
+            try {
+                const response = await fetch(`${API_URL}/api/admin/employees`, {
+                    headers: { "Authorization": "Bearer " + token }
+                });
+                if (response.ok) {
+                    const employees = await response.json();
+                    renderEmployeeTable(employees);
+                } else {
+                    handleAuthError(response.status);
+                }
+            } catch {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        // Render Leave Requests Table
+        function renderLeaveTable(leaves, showActions) {
+            const container = document.getElementById("tableContainer");
+            if (leaves.length === 0) {
+                container.innerHTML = '<p class="empty-msg">No leave requests found.</p>';
+                return;
+            }
+
+            let html = `<table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee ID</th>
+                        <th>Leave Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Reason</th>
+                        <th>Status</th>
+                        ${showActions ? '<th>Actions</th>' : ''}
+                    </tr>
+                </thead>
+                <tbody>`;
+
+            leaves.forEach(leave => {
+                const startDate = leave.startDate.split('T')[0];
+                const endDate = leave.endDate.split('T')[0];
+                html += `<tr>
+                    <td>${leave.id}</td>
+                    <td>${leave.employeeId}</td>
+                    <td>${leave.leaveType}</td>
+                    <td>${startDate}</td>
+                    <td>${endDate}</td>
+                    <td>${leave.reason}</td>
+                    <td><span class="badge ${leave.status}">${leave.status}</span></td>
+                    ${showActions && leave.status === 'Pending' ? `
+                    <td>
+                        <button class="btn-approve" onclick="approveLeave(${leave.id})">Approve</button>
+                        <button class="btn-reject" onclick="rejectLeave(${leave.id})">Reject</button>
+                    </td>` : showActions ? '<td>-</td>' : ''}
+                </tr>`;
+            });
+
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+        }
+
+        // Render Employee Table (Admin)
+        function renderEmployeeTable(employees) {
+            const container = document.getElementById("tableContainer");
+            if (employees.length === 0) {
+                container.innerHTML = '<p class="empty-msg">No employees found.</p>';
+                return;
+            }
+
+            let html = `<table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+
+            employees.forEach(emp => {
+                html += `<tr>
+                    <td>${emp.id}</td>
+                    <td>${emp.username}</td>
+                    <td><span class="badge ${emp.role}">${emp.role}</span></td>
+                    <td>
+                        <button class="btn-delete" onclick="deleteEmployee(${emp.id}, '${emp.username}')">Delete</button>
+                    </td>
+                </tr>`;
+            });
+
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+        }
+
+        // Manager: Approve Leave
+        async function approveLeave(id) {
+            try {
+                const response = await fetch(`${API_URL}/api/leave/approve/${id}`, {
+                    method: "PUT",
+                    headers: { "Authorization": "Bearer " + token }
+                });
+                if (response.ok) {
+                    showMessage("Leave request approved!", "success");
+                    loadAllLeaves();
+                } else {
+                    showMessage("Failed to approve leave.", "error");
+                }
+            } catch {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        // Manager: Reject Leave
+        async function rejectLeave(id) {
+            try {
+                const response = await fetch(`${API_URL}/api/leave/reject/${id}`, {
+                    method: "PUT",
+                    headers: { "Authorization": "Bearer " + token }
+                });
+                if (response.ok) {
+                    showMessage("Leave request rejected.", "success");
+                    loadAllLeaves();
+                } else {
+                    showMessage("Failed to reject leave.", "error");
+                }
+            } catch {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        // Admin: Delete Employee
+        async function deleteEmployee(id, username) {
+            if (!confirm(`Are you sure you want to delete "${username}"?`)) return;
+
+            try {
+                const response = await fetch(`${API_URL}/api/admin/delete/${id}`, {
+                    method: "DELETE",
+                    headers: { "Authorization": "Bearer " + token }
+                });
+                if (response.ok) {
+                    showMessage("Employee deleted successfully.", "success");
+                    loadEmployees();
+                } else {
+                    showMessage("Failed to delete employee.", "error");
+                }
+            } catch {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        function handleAuthError(status) {
+            if (status === 401 || status === 403) {
+                showMessage("Access denied or session expired. Redirecting to login...", "error");
+                setTimeout(() => window.location.href = "login.html", 1500);
+            }
+        }
+
+        function showMessage(text, type) {
+            const el = document.getElementById("message");
+            el.textContent = text;
+            el.className = `message ${type}`;
+            el.style.display = "block";
+            setTimeout(() => { el.style.display = "none"; }, 4000);
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

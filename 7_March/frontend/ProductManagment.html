@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Management</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+padding:40px;
+}
+
+h1{
+text-align:center;
+}
+
+.container{
+width:650px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:10px;
+padding-right: 2px ;
+margin:5px 0;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+background:#007bff;
+color:white;
+cursor:pointer;
+border-radius:4px;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th,td{
+padding:8px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Product Management</h1>
+
+<input id="name" placeholder="Product Name">
+<input id="price" placeholder="Price">
+<input id="quantity" placeholder="Quantity">
+
+<button onclick="addProduct()">Add Product</button>
+<button onclick="updateProduct()">Update Product</button>
+<button onclick="getProducts()">Fetch Products</button>
+
+<br><br>
+
+<input id="searchName" placeholder="Search Product by Name">
+<button onclick="searchProduct()">Search</button>
+<button onclick="getProducts()">Reset</button>
+
+<table>
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+<th>Qty</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="productTable"></tbody>
+
+</table>
+
+</div>
+
+
+<script>
+
+const API = "http://localhost:5151/api/Product";
+
+let selectedId = null;
+
+
+
+// FETCH ALL PRODUCTS
+async function getProducts(){
+
+try{
+
+const response = await fetch(API);
+
+const data = await response.json();
+
+displayProducts(data);
+
+}
+catch(error){
+
+console.error("Error fetching products",error);
+
+}
+
+}
+
+
+
+// DISPLAY PRODUCTS
+function displayProducts(data){
+
+const table = document.getElementById("productTable");
+
+table.innerHTML="";
+
+data.forEach(p => {
+
+table.innerHTML += `
+<tr>
+<td>${p.id}</td>
+<td>${p.name}</td>
+<td>${p.price}</td>
+<td>${p.quantity}</td>
+<td>
+<button onclick="editProduct(${p.id},'${p.name}',${p.price},${p.quantity})">Edit</button>
+<button onclick="deleteProduct(${p.id})">Delete</button>
+</td>
+</tr>
+`;
+
+});
+
+}
+
+
+
+// ADD PRODUCT
+async function addProduct(){
+
+const product = {
+
+name:document.getElementById("name").value,
+price:parseFloat(document.getElementById("price").value),
+quantity:parseInt(document.getElementById("quantity").value)
+
+};
+
+try{
+
+await fetch(API,{
+
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(product)
+
+});
+
+alert("Product Added");
+
+clearForm();
+
+getProducts();
+
+}
+catch(error){
+
+console.error("Error adding product",error);
+
+}
+
+}
+
+
+
+// EDIT PRODUCT
+function editProduct(id,name,price,quantity){
+
+selectedId=id;
+
+document.getElementById("name").value=name;
+document.getElementById("price").value=price;
+document.getElementById("quantity").value=quantity;
+
+}
+
+//Search product
+
+/*async function searchProduct(){
+    const name = document.getElementById("searchName").value.toLowerCase();
+
+    try{
+
+        const response = await fetch(API);
+
+        const data = await response.json();
+        const product = data.find(p=>p.name.toLowerCase() == name);
+        displayProducts([product]);
+    }
+catch(error){
+
+console.error("Element Not Found",error);
+
+}
+}*/
+async function searchProduct(){
+
+const name = document.getElementById("searchName").value;
+
+try{
+
+const response = await fetch(`${API}/search?name=${name}`);
+
+if(!response.ok){
+    throw new Error("Search request failed");
+}
+
+const data = await response.json();
+
+displayProducts(data);
+
+}
+catch(error){
+
+console.error("Search Failed", error);
+
+}
+}
+
+
+
+// UPDATE PRODUCT
+async function updateProduct(){
+
+if(selectedId==null){
+
+alert("Select product to update");
+
+return;
+
+}
+
+const product = {
+
+id:selectedId,
+name:document.getElementById("name").value,
+price:parseFloat(document.getElementById("price").value),
+quantity:parseInt(document.getElementById("quantity").value)
+
+};
+
+try{
+
+await fetch(`${API}/${selectedId}`,{
+
+method:"PUT",
+
+headers:{
+'Content-Type':'application/json'
+},
+
+body:JSON.stringify(product)
+
+});
+
+alert("Product Updated");
+
+selectedId=null;
+
+clearForm();
+
+getProducts();
+
+}
+catch(error){
+
+console.error("Update failed",error);
+
+}
+
+}
+
+
+
+// DELETE PRODUCT
+async function deleteProduct(id){
+
+if(!confirm("Delete this product?")) return;
+
+try{
+
+await fetch(`${API}/${id}`,{
+
+method:"DELETE"
+
+});
+
+alert("Product Deleted");
+
+getProducts();
+
+}
+catch(error){
+
+console.error("Delete error",error);
+
+}
+
+}// AUTO LOAD PRODUCTS
+getProducts();
+
+</script>
+
+</body>
+</html>

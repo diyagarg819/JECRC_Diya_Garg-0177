@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Button Hover Event</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#message{
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Mouse Hover Event Example</h2>
+
+<button id="submitBtn">Submit</button>
+
+<p id="message"></p>
+
+<script>
+document.getElementById("submitBtn").addEventListener("mouseover", () => {
+
+    console.log("Mouse hovered over submit button");
+
+    document.getElementById("message").textContent = 
+    "Mouse hovered over submit button";
+
+});
+</script>
+
+</body>
+</html>

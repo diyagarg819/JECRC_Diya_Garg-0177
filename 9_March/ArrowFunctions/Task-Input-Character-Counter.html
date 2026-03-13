@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Input Character Counter</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+}
+
+textarea{
+    width: 300px;
+    height: 100px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+#count{
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Live Character Counter</h2>
+
+<textarea id="message" placeholder="Type your message here..."></textarea>
+
+<p id="count">Characters: 0</p>
+
+<script>
+document.getElementById("message").addEventListener("keyup", (e) => {
+
+    let length = e.target.value.length;
+
+    document.getElementById("count").innerText = "Characters: " + length;
+
+});
+</script>
+
+</body>
+</html>

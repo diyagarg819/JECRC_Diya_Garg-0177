@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Button Click Event</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Login Button Click Event</h2>
+
+<button id="loginBtn">Login</button>
+
+<script>
+document.getElementById("loginBtn").addEventListener("click", (e) => {
+
+    console.log("Login button clicked");
+
+    alert("Login process started");
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Arrow Functions Demo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background:#f4f6f8;
+}
+
+h1{
+    color:#333;
+}
+
+button{
+    padding:10px 20px;
+    font-size:16px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.result-box{
+    margin-top:20px;
+    padding:15px;
+    background:white;
+    border-radius:6px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+ul{
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>JavaScript Arrow Functions Demo</h1>
+<p>Click the button below to see how arrow functions work in JavaScript.</p>
+
+<button id="runBtn">Run JavaScript Operations</button>
+
+<div class="result-box">
+    <ul id="output"></ul>
+</div>
+
+<script>
+
+const numbers = [1, 2, 3, 4, 5];
+
+const people = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 35 }
+];
+
+const runBtn = document.getElementById('runBtn');
+const output = document.getElementById('output');
+
+// 1. MAP function
+const squaredNumbers = numbers.map(num => num * num);
+
+// 2. FILTER function
+const adults = people.filter(person => person.age >= 30);
+
+// 3. REDUCE function
+const totalAge = people.reduce((sum, person) => sum + person.age, 0);
+
+// Event listener
+runBtn.addEventListener('click', () => {
+
+    output.innerHTML = '';
+
+    // Squared numbers
+    const squaredItem = document.createElement('li');
+    squaredItem.textContent = `Squared Numbers: ${squaredNumbers.join(', ')}`;
+    output.appendChild(squaredItem);
+
+    // Adults
+    const adultsItem = document.createElement('li');
+    adultsItem.textContent = `Adults: ${adults.map(person => person.name).join(', ')}`;
+    output.appendChild(adultsItem);
+
+    // Total age
+    const totalAgeItem = document.createElement('li');
+    totalAgeItem.textContent = `Total Age: ${totalAge}`;
+    output.appendChild(totalAgeItem);
+
+});
+
+</script>
+
+</body>
+</html>

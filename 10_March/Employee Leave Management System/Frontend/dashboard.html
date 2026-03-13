@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Leave Management System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; }
+
+        /* Navbar */
+        .navbar {
+            background: #4a90e2;
+            color: white;
+            padding: 14px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 { font-size: 20px; }
+        .navbar-right { display: flex; align-items: center; gap: 16px; font-size: 14px; }
+        .role-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .logout-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Main content */
+        .container { padding: 30px; max-width: 900px; margin: 0 auto; }
+
+        h2 { color: #333; margin-bottom: 24px; }
+
+        /* Navigation cards */
+        .nav-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 36px; }
+        .nav-card {
+            background: white;
+            border-radius: 10px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-card:hover { transform: translateY(-3px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+        .nav-card .icon { font-size: 40px; margin-bottom: 10px; }
+        .nav-card .title { font-size: 16px; font-weight: bold; }
+        .nav-card .desc { font-size: 13px; color: #888; margin-top: 6px; }
+
+        /* Info box */
+        .info-box {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .info-box h3 { color: #4a90e2; margin-bottom: 12px; }
+        .info-row { display: flex; gap: 8px; font-size: 14px; margin-bottom: 8px; color: #555; }
+        .info-label { font-weight: bold; min-width: 90px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Leave Management System</h1>
+        <div class="navbar-right">
+            <span id="welcomeMsg">Welcome!</span>
+            <span class="role-badge" id="roleBadge">Role</span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Dashboard</h2>
+
+        <!-- Nav cards rendered based on role -->
+        <div class="nav-cards" id="navCards"></div>
+
+        <div class="info-box">
+            <h3>Account Information</h3>
+            <div class="info-row"><span class="info-label">Username:</span> <span id="infoUsername">-</span></div>
+            <div class="info-row"><span class="info-label">Role:</span> <span id="infoRole">-</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+        const username = localStorage.getItem("username");
+
+        if (!token) {
+            window.location.href = "login.html";
+        }
+
+        // Set welcome info
+        document.getElementById("welcomeMsg").textContent = `Hello, ${username}`;
+        document.getElementById("roleBadge").textContent = role;
+        document.getElementById("infoUsername").textContent = username;
+        document.getElementById("infoRole").textContent = role;
+
+        // Build nav cards based on role
+        const navCardsEl = document.getElementById("navCards");
+
+        const cards = {
+            Employee: [
+                { icon: "📝", title: "Apply for Leave", desc: "Submit a new leave request", href: "apply-leave.html" },
+                { icon: "📋", title: "My Leave Requests", desc: "View your leave history", href: "leave-list.html" }
+            ],
+            Manager: [
+                { icon: "📋", title: "All Leave Requests", desc: "Review and manage leave requests", href: "leave-list.html" }
+            ],
+            Admin: [
+                { icon: "👥", title: "Manage Employees", desc: "View and delete employee accounts", href: "leave-list.html" }
+            ]
+        };
+
+        const roleCards = cards[role] || [];
+        roleCards.forEach(card => {
+            navCardsEl.innerHTML += `
+                <a class="nav-card" href="${card.href}">
+                    <div class="icon">${card.icon}</div>
+                    <div class="title">${card.title}</div>
+                    <div class="desc">${card.desc}</div>
+                </a>`;
+        });
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

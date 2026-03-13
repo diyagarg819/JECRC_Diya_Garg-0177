@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Leave - Leave Management System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; }
+
+        .navbar {
+            background: #4a90e2;
+            color: white;
+            padding: 14px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 { font-size: 20px; }
+        .navbar-right { display: flex; align-items: center; gap: 16px; }
+        .back-btn, .logout-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .back-btn:hover, .logout-btn:hover { background: rgba(255,255,255,0.3); }
+
+        .container { padding: 30px; max-width: 600px; margin: 0 auto; }
+        h2 { color: #333; margin-bottom: 24px; }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 14px; font-weight: bold; color: #555; margin-bottom: 6px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus { border-color: #4a90e2; }
+        textarea { resize: vertical; min-height: 90px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        button {
+            padding: 12px 30px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background: #357abd; }
+
+        .message {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Leave Management System</h1>
+        <div class="navbar-right">
+            <a class="back-btn" href="dashboard.html">Back to Dashboard</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Apply for Leave</h2>
+
+        <div class="card">
+            <div class="form-group">
+                <label for="leaveType">Leave Type</label>
+                <select id="leaveType">
+                    <option value="Sick Leave">Sick Leave</option>
+                    <option value="Casual Leave">Casual Leave</option>
+                    <option value="Annual Leave">Annual Leave</option>
+                    <option value="Maternity Leave">Maternity Leave</option>
+                    <option value="Emergency Leave">Emergency Leave</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" />
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" placeholder="Briefly describe the reason for your leave..."></textarea>
+            </div>
+
+            <button onclick="applyLeave()">Submit Leave Request</button>
+
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "https://localhost:5001";
+
+        // Check auth
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+        if (!token || role !== "Employee") {
+            window.location.href = "login.html";
+        }
+
+        // Set today as min date for start/end
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById("startDate").min = today;
+        document.getElementById("endDate").min = today;
+
+        async function applyLeave() {
+            const leaveType = document.getElementById("leaveType").value;
+            const startDate = document.getElementById("startDate").value;
+            const endDate = document.getElementById("endDate").value;
+            const reason = document.getElementById("reason").value.trim();
+
+            if (!startDate || !endDate || !reason) {
+                showMessage("Please fill in all fields.", "error");
+                return;
+            }
+            if (new Date(endDate) < new Date(startDate)) {
+                showMessage("End date cannot be before start date.", "error");
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/api/leave/apply`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer " + token
+                    },
+                    body: JSON.stringify({ leaveType, startDate, endDate, reason })
+                });
+
+                const result = await response.text();
+
+                if (response.ok) {
+                    showMessage("Leave request submitted successfully!", "success");
+                    // Clear form
+                    document.getElementById("startDate").value = "";
+                    document.getElementById("endDate").value = "";
+                    document.getElementById("reason").value = "";
+                } else if (response.status === 401) {
+                    showMessage("Session expired. Please login again.", "error");
+                    setTimeout(() => window.location.href = "login.html", 1500);
+                } else {
+                    showMessage(result || "Failed to submit leave request.", "error");
+                }
+            } catch (error) {
+                showMessage("Cannot connect to server.", "error");
+            }
+        }
+
+        function showMessage(text, type) {
+            const el = document.getElementById("message");
+            el.textContent = text;
+            el.className = `message ${type}`;
+            el.style.display = "block";
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
