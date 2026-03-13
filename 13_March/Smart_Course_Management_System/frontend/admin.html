@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Panel</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h2>Admin Dashboard</h2>
+
+<div>
+
+<a href="index.html">Courses</a>
+
+<a href="admin.html">Admin</a>
+
+</div>
+
+</nav>
+
+<div class="container">
+
+<h1>Manage Courses</h1>
+
+<div class="admin-form">
+
+<input id="courseName" placeholder="Course Name">
+
+<input id="departmentId" placeholder="Department ID">
+
+<input id="credits" placeholder="Credits">
+
+<button onclick="addCourse()">
+Add Course
+</button>
+
+<button onclick="updateCourseUI()" id="updateBtn">
+Update Course
+</button>
+
+</div>
+
+<hr>
+
+<div id="adminCourseList" class="course-grid"></div>
+
+    <hr>
+
+<h2>Enrollment History</h2>
+
+<button onclick="loadEnrollmentHistory()">
+Load Enrollment History
+</button>
+
+<div id="historyList" class="course-grid"></div>
+
+<nav class="navbar">
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

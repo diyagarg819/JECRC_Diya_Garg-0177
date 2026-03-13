@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Course System</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<h2>Smart Course System</h2>
+
+<div>
+
+<a href="index.html">Courses</a>
+
+<a href="enrollments.html">My Enrollments</a>
+
+<a href="admin.html">Admin</a>
+
+</div>
+
+</nav>
+
+<div class="container">
+
+<h1>Available Courses</h1>
+
+<div class="search-bar">
+
+<input
+id="searchBox"
+placeholder="Search courses..."
+>
+
+<button onclick="searchCourses()">Search</button>
+
+</div>
+
+<div id="courseList" class="course-grid"></div>
+
+</div>
+
+<script src="js/api.js"></script>
+
+<script src="js/courses.js"></script>
+
+</body>
+
+</html>

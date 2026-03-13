@@ -1,0 +1,280 @@
+body{
+
+font-family: 'Segoe UI',sans-serif;
+
+margin:0;
+
+background:#f4f6f9;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+background:#1e293b;
+
+color:white;
+
+display:flex;
+
+justify-content:space-between;
+
+padding:15px 30px;
+
+align-items:center;
+
+}
+
+.navbar a{
+
+color:white;
+
+margin-left:20px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.navbar a:hover{
+
+color:#38bdf8;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+padding:30px;
+
+}
+
+/* SEARCH */
+
+.search-bar{
+
+margin-bottom:20px;
+
+}
+
+.search-bar input{
+
+padding:10px;
+
+width:250px;
+
+border-radius:5px;
+
+border:1px solid #ccc;
+
+}
+
+.search-bar button{
+
+padding:10px 15px;
+
+background:#0ea5e9;
+
+border:none;
+
+color:white;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}
+
+/* GRID */
+
+.course-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+/* CARD */
+
+.course-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+}
+
+.course-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+}
+
+/* BUTTON */
+
+button{
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+padding:8px 15px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+margin-top:10px;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+/* ADMIN FORM */
+
+.admin-form input{
+
+padding:10px;
+
+margin:5px;
+
+border:1px solid #ccc;
+
+border-radius:5px;
+
+}
+/* HISTORY SECTION */
+
+.history-section{
+
+margin-top:50px;
+
+padding-top:20px;
+
+border-top:2px solid #e5e7eb;
+
+}
+
+.history-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.history-header h2{
+
+margin:0;
+
+color:#1f2937;
+
+}
+
+.history-btn{
+
+background:#10b981;
+
+padding:8px 14px;
+
+border:none;
+
+border-radius:6px;
+
+color:white;
+
+font-weight:500;
+
+cursor:pointer;
+
+}
+
+.history-btn:hover{
+
+background:#059669;
+
+}
+
+/* HISTORY GRID */
+
+.history-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:20px;
+
+}
+
+/* HISTORY CARD */
+
+.history-card{
+
+background:white;
+
+padding:18px;
+
+border-radius:10px;
+
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+
+transition:0.3s;
+
+}
+
+.history-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+}
+
+.history-card h3{
+
+margin-top:0;
+
+color:#2563eb;
+
+}
+
+.status-active{
+
+color:#16a34a;
+
+font-weight:600;
+
+}
+
+.status-dropped{
+
+color:#dc2626;
+
+font-weight:600;
+
+}
