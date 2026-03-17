@@ -1,0 +1,86 @@
+<div class="container">
+  <h2>Doctor Appointment System</h2>
+
+  <form (ngSubmit)="bookAppointment()">
+
+    <!-- Patient Name -->
+    <label>Patient Name:</label>
+    <input
+      type="text"
+      [(ngModel)]="patientName"
+      name="patientName"
+      required
+    />
+
+    <!-- Doctor -->
+    <label>Select Doctor:</label>
+    <select
+      [(ngModel)]="doctor"
+      name="doctor"
+      required
+    >
+      <option value="">--Select Doctor--</option>
+      <option>Dr. Sharma</option>
+      <option>Dr. Mehta</option>
+      <option>Dr. Gupta</option>
+    </select>
+
+    <!-- Date -->
+    <label>Appointment Date:</label>
+    <input
+      type="date"
+      [(ngModel)]="appointmentDate"
+      name="appointmentDate"
+      [min]="minDate"
+      required
+    />
+
+    <!-- Consultation -->
+    <label>Consultation Type:</label>
+    <select
+      [(ngModel)]="consultationType"
+      name="consultationType"
+      (ngModelChange)="calculateFee()"
+      required
+    >
+      <option value="">--Select--</option>
+      <option>Online</option>
+      <option>Offline</option>
+    </select>
+
+    <!-- Symptoms -->
+    <label>Symptoms:</label>
+    <textarea
+      [(ngModel)]="symptoms"
+      name="symptoms"
+    ></textarea>
+
+    <br><br>
+    <button type="submit">Book Appointment</button>
+  </form>
+
+  <hr>
+
+  <!-- 🔴 LIVE SUMMARY (updates instantly) -->
+  <h3>Live Appointment Summary</h3>
+
+  <p><b>Name:</b> {{ patientName || '-' }}</p>
+  <p><b>Doctor:</b> {{ doctor || '-' }}</p>
+  <p><b>Date:</b> {{ appointmentDate || '-' }}</p>
+  <p><b>Consultation:</b> {{ consultationType || '-' }}</p>
+  <p><b>Symptoms:</b> {{ symptoms || '-' }}</p>
+  <p><b>Fee:</b> ₹{{ fee }}</p>
+
+  <!-- ✅ Confirmation -->
+  <div class="modal" *ngIf="showPopup">
+  <div class="modal-content">
+    <h3>✅ Appointment Confirmed</h3>
+    <p><b>Name:</b> {{ patientName }}</p>
+    <p><b>Doctor:</b> {{ doctor }}</p>
+    <p><b>Date:</b> {{ appointmentDate }}</p>
+    <p><b>Fee:</b> ₹{{ fee }}</p>
+
+    <button (click)="closePopup()">Close</button>
+  </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+h2{
+    color : darkred;
+}
+
+input,textarea{
+    width : 250px;
+    padding : 5px;
+    margin : 5px 0;
+}
+
+h3{
+    color: green;
+}
