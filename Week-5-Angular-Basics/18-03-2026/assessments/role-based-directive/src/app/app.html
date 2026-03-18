@@ -1,0 +1,29 @@
+<h2>Role-Based Dashboard</h2>
+
+<p>Current Role: <strong>{{ role }}</strong></p>
+
+<!-- Role Switch -->
+<button (click)="setRole('admin')">Admin</button>
+<button (click)="setRole('user')">User</button>
+
+<hr>
+
+<!-- 🔐 Admin UI -->
+<div *appRole="role; required: 'admin'">
+
+  <div class="card admin">📊 Dashboard Analytics</div>
+  <div class="card admin">👨‍💼 Manage Users</div>
+  <div class="card admin">⚙️ Settings Panel</div>
+  <div class="card admin">📁 Reports Section</div>
+
+</div>
+
+<!-- 👤 User UI -->
+<div *appRole="role; required: 'user'">
+
+  <div class="card user">🛒 View Products</div>
+  <div class="card user">📦 My Orders</div>
+  <div class="card user">💳 Payment History</div>
+  <div class="card user">👤 Profile Settings</div>
+
+</div>

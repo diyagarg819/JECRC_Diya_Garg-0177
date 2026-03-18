@@ -1,0 +1,30 @@
+<h2>Click Block Directive Demo</h2>
+
+<button (click)="toggle()">
+  Toggle Click (Current: {{ allowClick ? 'Allowed' : 'Blocked' }})
+</button>
+
+<hr>
+
+<!-- Example 1 -->
+<button 
+  [appClickBlock]="allowClick"
+  (click)="buttonClicked('Button 1')">
+  Button 1
+</button>
+
+<!-- Example 2 -->
+<button 
+  [appClickBlock]="allowClick"
+  (click)="buttonClicked('Button 2')">
+  Button 2
+</button>
+
+<!-- Example 3 (Card UI) -->
+<div 
+  class="card"
+  [appClickBlock]="allowClick"
+  (click)="buttonClicked('Card')">
+  <h3>Product Card</h3>
+  <p>Click me if allowed</p>
+</div>

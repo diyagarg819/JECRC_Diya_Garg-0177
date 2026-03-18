@@ -1,0 +1,14 @@
+<h2>Student Result Dashboard</h2>
+
+<div *ngFor="let s of students" class="card">
+  <h3>{{ s.name }}</h3>
+
+  <p 
+    [appStatusColor]="s.marks"
+    [passingMarks]="50">
+    
+    Marks: {{ s.marks }} 
+    ({{ s.marks >= 50 ? 'Pass' : 'Fail' }})
+    
+  </p>
+</div>

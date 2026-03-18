@@ -1,0 +1,32 @@
+<h2>Product Dashboard</h2>
+
+<button (click)="showProducts = !showProducts">Toggle Products</button>
+
+<div *ngIf="showProducts">
+  <div *ngFor="let p of products" class="card">
+    
+    <h3>{{ p.name }}</h3>
+
+    <p [ngClass]="{
+      'high-price': p.price > 30000,
+      'low-price': p.price <= 30000
+    }">
+      Price: {{ p.price }}
+    </p>
+
+    <div [ngSwitch]="p.status">
+      <p *ngSwitchCase="'available'">In Stock</p>
+      <p *ngSwitchCase="'out'">Out of Stock</p>
+      <p *ngSwitchCase="'limited'">Limited Stock</p>
+      <p *ngSwitchDefault>Unknown</p>
+    </div>
+
+    <p [ngStyle]="{
+      color: p.status === 'available' ? 'green' : 'red',
+      fontWeight: 'bold'
+    }">
+      Status: {{ p.status }}
+    </p>
+
+  </div>
+</div>

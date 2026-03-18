@@ -1,0 +1,22 @@
+<div [appTheme]="theme" class="container">
+
+  <h2>Theme Directive Demo</h2>
+
+  <button (click)="toggleTheme()">
+    Switch to {{ theme === 'light' ? 'Dark' : 'Light' }} Mode
+  </button>
+
+  <hr>
+
+  <!-- Sample Elements -->
+  <div class="card">
+    <h3>Dashboard</h3>
+    <p>This UI changes theme dynamically.</p>
+  </div>
+
+  <div class="card">
+    <h3>Profile</h3>
+    <p>Dark and Light mode supported.</p>
+  </div>
+
+</div>

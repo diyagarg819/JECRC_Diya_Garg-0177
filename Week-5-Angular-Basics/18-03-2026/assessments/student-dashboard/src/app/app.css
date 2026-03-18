@@ -1,0 +1,19 @@
+h2 {
+  text-align: center;
+  color: brown;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 250px;
+  display: inline-block;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.topper {
+  border: 2px solid gold;
+  background-color: #fff8dc;
+}
