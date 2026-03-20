@@ -1,0 +1,59 @@
+/* Page Styling */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Order Card Styling */
+div {
+  margin-bottom: 15px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+/* Card Style (for keyvalue section) */
+.card {
+  background: #ffffff;
+  padding: 15px;
+  margin: 10px auto;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight price */
+.highlight {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Order list styling */
+div[ngFor] {
+  background: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+/* Bold labels */
+b {
+  color: #34495e;
+}
+
+/* Custom pipe output styling */
+p:last-child {
+  font-size: 18px;
+  color: #27ae60;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}

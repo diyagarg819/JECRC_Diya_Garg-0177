@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h1>🛍️ Shop Products</h1>
+
+  <div class="filters">
+    <input placeholder="Search..." [(ngModel)]="search">
+
+    <select [(ngModel)]="category">
+      <option value="">All Categories</option>
+      <option>Electronics</option>
+      <option>Fashion</option>
+    </select>
+  </div>
+
+  <div class="grid">
+    <div class="card" *ngFor="let p of products">
+
+      <img [src]="p.image" />
+
+      <h3>{{p.name}}</h3>
+      <p class="price">₹{{p.price}}</p>
+      <p class="rating">⭐ {{p.rating}}</p>
+
+      <input type="number" [(ngModel)]="qty[p.id]" min="1" placeholder="Qty">
+
+      <button (click)="addToCart(p)">Add to Cart</button>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h1>🛒 Your Cart</h1>
+
+  <div *ngFor="let item of cart.getCart()" class="cart-item">
+
+    <div>
+      <h3>{{item.name}}</h3>
+      <p>₹{{item.price}}</p>
+    </div>
+
+    <div class="qty">
+      <button (click)="cart.decrease(item)">-</button>
+      <span>{{item.qty}}</span>
+      <button (click)="cart.increase(item)">+</button>
+    </div>
+
+    <div>
+      ₹{{item.price * item.qty}}
+    </div>
+
+    <button class="remove" (click)="cart.remove(item.id)">❌</button>
+
+  </div>
+
+  <h2>Total: ₹{{cart.total()}}</h2>
+
+  <button (click)="cart.clear()">Clear Cart</button>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>👨‍💼 Employee Registration</h2>
+
+  <!-- FormControl -->
+  <h3>1️⃣ Name</h3>
+  <input [formControl]="name" placeholder="Enter Name" />
+  <p *ngIf="name.invalid && name.touched" class="error">
+    Name is required
+  </p>
+
+  <hr>
+
+  <!-- FormGroup -->
+  <h3>2️⃣ Account Details</h3>
+  <form [formGroup]="account">
+    <input formControlName="email" placeholder="Email" />
+    <input formControlName="password" placeholder="Password" />
+
+    <p *ngIf="account.get('email')?.invalid && account.get('email')?.touched" class="error">
+      Invalid Email
+    </p>
+  </form>
+
+  <hr>
+
+  <!-- FormArray -->
+  <h3>3️⃣ Skills</h3>
+  <div *ngFor="let skill of skills.controls; let i = index">
+    <input [formControl]="skill" placeholder="Skill" />
+    <button (click)="removeSkill(i)">Remove</button>
+  </div>
+
+  <button (click)="addSkill()">Add Skill</button>
+
+  <hr>
+
+  <!-- FormRecord -->
+  <h3>4️⃣ Preferences</h3>
+  <div *ngFor="let item of preferences.controls | keyvalue">
+    <label>
+      {{ item.key }}
+      <input type="checkbox" [formControl]="item.value" />
+    </label>
+  </div>
+
+  <button (click)="addPreference()">Add Preference</button>
+
+  <hr>
+
+  <!-- Submit -->
+  <button (click)="submit()">Submit</button>
+</div>

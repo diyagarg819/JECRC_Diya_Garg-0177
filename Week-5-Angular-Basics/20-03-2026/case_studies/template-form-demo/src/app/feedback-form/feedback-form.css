@@ -1,0 +1,27 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+  font-family: Arial;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 6px 12px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}

@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>📝 Employee Feedback Form (Template-driven)</h2>
+
+  <form #feedbackForm="ngForm" (ngSubmit)="submitForm(feedbackForm)">
+    
+    <!-- Name -->
+    <label>Name*</label>
+    <input type="text" name="name" [(ngModel)]="feedback.name" required />
+    <div *ngIf="feedbackForm.submitted && !feedback.name" class="error">Name is required</div>
+
+    <!-- Email -->
+    <label>Email*</label>
+    <input type="email" name="email" [(ngModel)]="feedback.email" required email />
+    <div *ngIf="feedbackForm.submitted && !feedback.email" class="error">Email is required</div>
+
+    <!-- Department -->
+    <label>Department*</label>
+    <select name="department" [(ngModel)]="feedback.department" required>
+      <option value="">Select Department</option>
+      <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+    </select>
+
+    <!-- Rating -->
+    <label>Rating*</label>
+    <div *ngFor="let rate of [1,2,3,4,5]">
+      <input type="radio" name="rating" [value]="rate" [(ngModel)]="feedback.rating" required /> {{ rate }}
+    </div>
+
+    <!-- Comments -->
+    <label>Comments</label>
+    <textarea name="comments" [(ngModel)]="feedback.comments"></textarea>
+
+    <!-- Skills -->
+    <label>Skills</label>
+    <div *ngFor="let skill of allSkills">
+      <input type="checkbox" [value]="skill" (change)="updateSkills(skill, $event.target.checked)" /> {{ skill }}
+    </div>
+
+    <button type="submit">Submit Feedback</button>
+  </form>
+</div>

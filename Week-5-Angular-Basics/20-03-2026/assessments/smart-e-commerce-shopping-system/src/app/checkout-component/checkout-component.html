@@ -1,0 +1,102 @@
+<div class="container">
+
+<h1>📋 Checkout</h1>
+
+<form class="form">
+
+<!-- TEXT -->
+<input placeholder="Full Name" [(ngModel)]="user.name" name="name">
+
+<input placeholder="Address Line" [(ngModel)]="user.address" name="address">
+
+<!-- EMAIL -->
+<input type="email" placeholder="Email" [(ngModel)]="user.email" name="email">
+
+<!-- NUMBER -->
+<input type="number" placeholder="Phone Number" [(ngModel)]="user.phone" name="phone">
+
+<input type="number" placeholder="ZIP Code" [(ngModel)]="user.zip" name="zip">
+
+<!-- RADIO: GENDER -->
+<h3>Gender</h3>
+<label><input type="radio" value="Male" [(ngModel)]="user.gender" name="gender"> Male</label>
+<label><input type="radio" value="Female" [(ngModel)]="user.gender" name="gender"> Female</label>
+
+<!-- RADIO: DELIVERY -->
+<h3>Delivery Type</h3>
+<label><input type="radio" value="Standard" [(ngModel)]="user.deliveryType" name="delivery"> Standard</label>
+<label><input type="radio" value="Express" [(ngModel)]="user.deliveryType" name="delivery"> Express</label>
+
+<!-- CHECKBOX -->
+<label>
+  <input type="checkbox" [(ngModel)]="user.terms" name="terms">
+  Accept Terms & Conditions
+</label>
+
+<label>
+  <input type="checkbox" [(ngModel)]="user.subscribe" name="subscribe">
+  Subscribe to offers
+</label>
+
+<!-- DROPDOWN -->
+<select [(ngModel)]="user.city" name="city">
+  <option value="">Select City</option>
+  <option>Delhi</option>
+  <option>Mumbai</option>
+</select>
+
+<select [(ngModel)]="user.state" name="state">
+  <option value="">Select State</option>
+  <option>Rajasthan</option>
+  <option>Maharashtra</option>
+</select>
+
+<select [(ngModel)]="user.country" name="country">
+  <option value="">Select Country</option>
+  <option>India</option>
+</select>
+
+<!-- DATE -->
+<input type="date" [(ngModel)]="user.deliveryDate" name="date">
+
+<!-- TEXTAREA -->
+<textarea placeholder="Additional Instructions" [(ngModel)]="user.instructions" name="instructions"></textarea>
+
+<!-- FILE -->
+<label>Upload ID Proof</label>
+<input type="file">
+
+<!-- 🔁 DYNAMIC ADDRESSES -->
+<h3>Multiple Addresses</h3>
+<div *ngFor="let addr of addresses; let i=index">
+  <input [(ngModel)]="addresses[i]" name="addr{{i}}" placeholder="Address {{i+1}}">
+</div>
+<button type="button" (click)="addresses.push('')">+ Add Address</button>
+
+<!-- 💳 PAYMENT -->
+<h3>Payment Method</h3>
+
+<label><input type="radio" value="card" [(ngModel)]="user.payment" name="payment"> Credit/Debit Card</label>
+<label><input type="radio" value="upi" [(ngModel)]="user.payment" name="payment"> UPI</label>
+<label><input type="radio" value="cod" [(ngModel)]="user.payment" name="payment"> Cash on Delivery</label>
+
+<!-- CONDITIONAL -->
+
+<!-- CARD -->
+<div *ngIf="user.payment === 'card'">
+  <input placeholder="Card Number" [(ngModel)]="user.cardNumber" name="cardNumber">
+  <input type="month" [(ngModel)]="user.expiry" name="expiry">
+  <input placeholder="CVV" [(ngModel)]="user.cvv" name="cvv">
+</div>
+
+<!-- UPI -->
+<div *ngIf="user.payment === 'upi'">
+  <input placeholder="UPI ID" [(ngModel)]="user.upi" name="upi">
+</div>
+
+<!-- COD → no extra fields -->
+
+<button class="place">Place Order</button>
+
+</form>
+</div>

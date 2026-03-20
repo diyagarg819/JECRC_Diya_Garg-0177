@@ -1,0 +1,71 @@
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FORM BOX */
+.form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* ROW LAYOUT */
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+/* SECTION HEADINGS */
+h3 {
+  margin-top: 15px;
+  color: #2e7d32;
+}
+
+/* RADIO & CHECKBOX */
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+/* BUTTON */
+.place {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #4CAF50, #2e7d32);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.place:hover {
+  transform: scale(1.03);
+}
+
+/* DYNAMIC ADDRESS */
+button {
+  margin-top: 10px;
+}
