@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>🚀 RxJS Visual Demo</h2>
+
+  <!-- INPUT + BUTTON -->
+  <input #searchBox placeholder="Search posts (min 3 chars)..." />
+  <button #clickBtn>Click Me</button>
+
+  <hr>
+
+  <!-- OBSERVABLE -->
+  <h3>1️⃣ Observable Output</h3>
+  <div *ngFor="let item of obsevableOutput">{{ item }}</div>
+
+  <!-- MAP -->
+  <h3>2️⃣ Map Output</h3>
+  <div *ngFor="let item of mapOutput">{{ item }}</div>
+
+  <!-- FILTER -->
+  <h3>3️⃣ Filter + Map Output</h3>
+  <div *ngFor="let item of filterOutput">{{ item }}</div>
+
+  <!-- MULTI MAP -->
+  <h3>4️⃣ Multiple Map Output</h3>
+  <div *ngFor="let item of multimapOutput">{{ item }}</div>
+
+  <!-- BEHAVIOR SUBJECT -->
+  <h3>5️⃣ BehaviorSubject Output</h3>
+  <div *ngFor="let item of behaviorOutput">{{ item }}</div>
+
+  <!-- CLICK -->
+  <h3>6️⃣ Button Click Output</h3>
+  <p>{{ clickOutput }}</p>
+ <!-- SEARCH -->
+  <h3>🔍 Search (filter + debounceTime + switchMap)</h3>
+
+  <input #searchBox placeholder="Type at least 3 characters..." />
+
+  <p *ngIf="loading">⏳ Loading...</p>
+
+  <div *ngIf="searchOutput.length > 0">
+    <div *ngFor="let post of searchOutput" class="card">
+      <h4>{{ post.title }}</h4>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+
+  <p *ngIf="searchOutput.length === 0 && !loading">
+    No results found
+  </p>
+
+  <hr>
+
+  <!-- MERGEMAP -->
+  <h3>⚡ mergeMap (Parallel API Calls)</h3>
+
+  <div *ngFor="let post of mergeMapOutput" class="card">
+    <h4>{{ post.title }}</h4>
+    <p><b>ID:</b> {{ post.id }}</p>
+    <p>{{ post.body }}</p>
+  </div>
+
+</div>

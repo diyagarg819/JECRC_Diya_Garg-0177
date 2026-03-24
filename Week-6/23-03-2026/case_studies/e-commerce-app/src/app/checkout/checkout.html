@@ -1,0 +1,13 @@
+<h2>Checkout</h2>
+
+<input type="text" [(ngModel)] = "form.name" placeholder="Name" required=""/>
+<input type="text" [(ngModel)] = "form.email" placeholder="Email" required=""/>
+<textarea name="" id="" [(ngModel)] = "form.address" placeholder="Address"></textarea>
+
+<select [(ngModel)] = "form.paymentMethod">
+    <Option value="">Select Payment</Option>
+    <option value="credit-card">Credit Card</option>
+    <option value="paypal">PayPal</option>
+</select>
+
+<button (click)="submit()">Place Order</button>

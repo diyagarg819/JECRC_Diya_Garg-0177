@@ -1,0 +1,22 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial;
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
