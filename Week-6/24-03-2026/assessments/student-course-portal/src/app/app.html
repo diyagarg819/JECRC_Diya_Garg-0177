@@ -1,0 +1,44 @@
+<!-- ════════════════════════════════════════════════════════
+     APP SHELL  –  Navigation bar + Router Outlet
+     routerLink   : navigates without page reload (SPA)
+     routerLinkActive : adds CSS class when route is active
+     <router-outlet>  : Angular swaps the matched component here
+  ════════════════════════════════════════════════════════ -->
+ 
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🎓</span>
+    <span class="brand-name">Student-Course-Portal</span>
+  </div>
+ 
+  <ul class="nav-links">
+    <li>
+      <a routerLink="/dashboard"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a routerLink="/courses"
+         routerLinkActive="active">
+        Courses
+      </a>
+    </li>
+    <li>
+      <a routerLink="/profile"
+         routerLinkActive="active">
+        Profile
+      </a>
+    </li>
+  </ul>
+</nav>
+ 
+<!-- Active route component renders here -->
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+ 
+<footer class="footer">
+  <p>© 2025 Student-Course-Portal Training Institute. All rights reserved.</p>
+</footer>

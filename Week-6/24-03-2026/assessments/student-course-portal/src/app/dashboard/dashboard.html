@@ -1,0 +1,61 @@
+<!-- ══════════════════════════════════════════
+     DASHBOARD  –  /dashboard
+  ══════════════════════════════════════════ -->
+ 
+<div class="page dashboard-page">
+ 
+  <!-- Welcome Banner -->
+  <section class="welcome-banner">
+    <div class="welcome-text">
+      <h1>Welcome back, <span class="highlight">{{ studentName }}</span> 👋</h1>
+      <p>Continue your learning journey. You have <strong>2 courses</strong> in progress.</p>
+      <button class="btn btn-primary" (click)="goToCourses()">Browse All Courses</button>
+    </div>
+    <div class="welcome-stats">
+      <div class="stat-card">
+        <span class="stat-number">2</span>
+        <span class="stat-label">In Progress</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">1</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">48%</span>
+        <span class="stat-label">Avg. Progress</span>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Featured Courses -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Featured Courses</h2>
+      <!-- routerLink navigates to /courses without reload -->
+      <a routerLink="/courses" class="see-all-link">See All →</a>
+    </div>
+ 
+    <div class="course-grid">
+      <div
+        class="course-card"
+        *ngFor="let course of featuredCourses"
+        (click)="viewCourse(course.id)"
+      >
+        <div class="course-thumb thumb-{{ course.thumbnail }}">
+          <span class="course-level badge">{{ course.level }}</span>
+        </div>
+        <div class="course-body">
+          <span class="course-category">{{ course.category }}</span>
+          <h3>{{ course.title }}</h3>
+          <p class="instructor">{{ course.instructor }}</p>
+          <div class="course-meta">
+            <span>⏱ {{ course.duration }}</span>
+            <span>⭐ {{ course.rating }}</span>
+            <span>👥 {{ course.enrolled | number }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+</div>

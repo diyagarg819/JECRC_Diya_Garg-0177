@@ -1,0 +1,59 @@
+<!-- ══════════════════════════════════════════
+     PROFILE  –  /profile
+  ══════════════════════════════════════════ -->
+ 
+<div class="page profile-page">
+ 
+  <div class="page-header">
+    <h1>My Profile</h1>
+  </div>
+ 
+  <div class="profile-layout">
+ 
+    <!-- Profile Card -->
+    <aside class="profile-card">
+      <div class="avatar">{{ student.avatar }}</div>
+      <h2>{{ student.name }}</h2>
+      <p class="profile-email">{{ student.email }}</p>
+      <p class="profile-joined">Member since {{ student.joinDate }}</p>
+ 
+      <ul class="profile-info">
+        <li><span class="label">📱 Phone</span> {{ student.phone }}</li>
+        <li><span class="label">📍 City</span>  {{ student.city }}</li>
+      </ul>
+ 
+      <button class="btn btn-outline btn-full">Edit Profile</button>
+    </aside>
+ 
+    <!-- Enrolled Courses -->
+    <section class="enrolled-section">
+      <h2>My Courses</h2>
+ 
+      <div class="enrolled-list">
+        <div class="enrolled-item" *ngFor="let ec of enrolledCourses">
+          <div class="enrolled-header">
+            <span class="enrolled-title">{{ ec.title }}</span>
+            <span
+              class="status-badge"
+              [class.completed]="ec.status === 'Completed'"
+            >
+              {{ ec.status }}
+            </span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" [style.width.%]="ec.progress"></div>
+          </div>
+          <small>{{ ec.progress }}% complete</small>
+        </div>
+      </div>
+ 
+      <!-- Quick links -->
+      <div class="profile-nav">
+        <a routerLink="/courses" class="btn btn-primary">Browse More Courses</a>
+        <a routerLink="/dashboard" class="btn btn-ghost">Go to Dashboard</a>
+      </div>
+    </section>
+ 
+  </div>
+</div>
+ 

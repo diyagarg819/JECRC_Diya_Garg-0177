@@ -1,0 +1,65 @@
+<!-- ══════════════════════════════════════════
+     COURSES  –  /courses
+  ══════════════════════════════════════════ -->
+ 
+<div class="page courses-page">
+ 
+  <div class="page-header">
+    <h1>All Courses</h1>
+    <p>{{ filteredCourses.length }} courses available</p>
+  </div>
+ 
+  <!-- Search & Filter Bar -->
+  <div class="filter-bar">
+    <input
+      class="search-input"
+      type="text"
+      placeholder="🔍  Search courses..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+ 
+    <div class="level-filters">
+      <button
+        *ngFor="let lvl of levels"
+        class="filter-btn"
+        [class.active]="selectedLevel === lvl"
+        (click)="selectedLevel = lvl; onLevelChange()"
+      >
+        {{ lvl }}
+      </button>
+    </div>
+  </div>
+ 
+  <!-- Course Grid -->
+  <div class="course-grid" *ngIf="filteredCourses.length > 0; else noCourses">
+    <div
+      class="course-card"
+      *ngFor="let course of filteredCourses"
+      (click)="viewDetail(course.id)"
+    >
+      <div class="course-thumb thumb-{{ course.thumbnail }}">
+        <span class="course-level badge">{{ course.level }}</span>
+      </div>
+      <div class="course-body">
+        <span class="course-category">{{ course.category }}</span>
+        <h3>{{ course.title }}</h3>
+        <p class="instructor">by {{ course.instructor }}</p>
+        <p class="course-desc">{{ course.description | slice:0:90 }}…</p>
+        <div class="course-meta">
+          <span>⏱ {{ course.duration }}</span>
+          <span>⭐ {{ course.rating }}</span>
+          <span>👥 {{ course.enrolled | number }}</span>
+        </div>
+        <button class="btn btn-outline">View Details →</button>
+      </div>
+    </div>
+  </div>
+ 
+  <ng-template #noCourses>
+    <div class="empty-state">
+      <p>😕 No courses match your search. Try a different keyword or filter.</p>
+    </div>
+  </ng-template>
+ 
+</div>

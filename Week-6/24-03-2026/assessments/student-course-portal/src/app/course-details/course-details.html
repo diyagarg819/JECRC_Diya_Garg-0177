@@ -1,0 +1,88 @@
+<!-- ══════════════════════════════════════════
+     COURSE DETAIL  –  /course/:id
+  ══════════════════════════════════════════ -->
+ 
+<div class="page detail-page">
+ 
+  <!-- Loading state -->
+  <div *ngIf="loading" class="loading-state">
+    <p>Loading course details…</p>
+  </div>
+ 
+  <!-- Course not found -->
+  <div *ngIf="!loading && !course" class="empty-state">
+    <h2>Course not found 😕</h2>
+    <button class="btn btn-primary" (click)="goBack()">← Back to Courses</button>
+  </div>
+ 
+  <!-- Course Detail Content -->
+  <ng-container *ngIf="!loading && course">
+ 
+    <!-- Back navigation -->
+    <button class="btn btn-ghost back-btn" (click)="goBack()">← Back to Courses</button>
+ 
+    <div class="detail-layout">
+ 
+      <!-- Left: Course Info -->
+      <div class="detail-main">
+        <div class="detail-hero thumb-{{ course.thumbnail }}">
+          <span class="course-level badge badge-lg">{{ course.level }}</span>
+        </div>
+ 
+        <div class="detail-body">
+          <span class="course-category">{{ course.category }}</span>
+          <h1>{{ course.title }}</h1>
+          <p class="instructor-name">Instructor: <strong>{{ course.instructor }}</strong></p>
+ 
+          <div class="detail-stats">
+            <span class="stat">⏱ {{ course.duration }}</span>
+            <span class="stat">⭐ {{ course.rating }}/5</span>
+            <span class="stat">👥 {{ course.enrolled | number }} students</span>
+          </div>
+ 
+          <h2>About this Course</h2>
+          <p class="course-description">{{ course.description }}</p>
+ 
+          <h2>What You'll Learn</h2>
+          <ul class="topics-list">
+            <li *ngFor="let topic of course.topics">
+              <span class="check">✅</span> {{ topic }}
+            </li>
+          </ul>
+        </div>
+      </div>
+ 
+      <!-- Right: Enroll Card -->
+      <aside class="enroll-card">
+        <h3>{{ course.title }}</h3>
+        <p class="enroll-price">Free Enrollment</p>
+ 
+        <ul class="enroll-details">
+          <li>📅 Duration: {{ course.duration }}</li>
+          <li>📊 Level: {{ course.level }}</li>
+          <li>🏷️ Category: {{ course.category }}</li>
+          <li>👥 {{ course.enrolled | number }} already enrolled</li>
+        </ul>
+ 
+        <button
+          class="btn btn-primary btn-full"
+          [disabled]="enrolled"
+          (click)="enroll()"
+        >
+          {{ enrolled ? '✅ Enrolled!' : 'Enroll Now' }}
+        </button>
+ 
+        <!-- Breadcrumb navigation -->
+        <div class="breadcrumb">
+          <a routerLink="/dashboard">Dashboard</a>
+          <span> / </span>
+          <a routerLink="/courses">Courses</a>
+          <span> / </span>
+          <span>{{ course.title }}</span>
+        </div>
+      </aside>
+ 
+    </div>
+  </ng-container>
+ 
+</div>
