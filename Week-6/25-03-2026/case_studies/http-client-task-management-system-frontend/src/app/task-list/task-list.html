@@ -1,0 +1,134 @@
+<div class="list-container">
+  <h2>Task List</h2>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-error">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (keyup)="searchTasks()"
+      placeholder="Search tasks..."
+      class="search-input"
+    />
+    <button *ngIf="searchTerm" (click)="clearSearch()" class="btn btn-small">
+      Clear
+    </button>
+  </div>
+
+  <div class="search-container">
+    <input
+      type="number"
+      [(ngModel)]="taskIdSearch"
+      placeholder="Get task by ID..."
+      class="search-input"
+      min="1"
+    />
+    <button (click)="getTaskById()" class="btn btn-small">
+      Find ID
+    </button>
+    <button *ngIf="taskIdSearch" (click)="clearTaskIdSearch()" class="btn btn-small">
+      Reset
+    </button>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading">
+    Loading tasks...
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!isLoading && filteredTasks.length === 0" class="empty-state">
+    <p>No tasks found. <span *ngIf="!searchTerm">Create one to get started!</span></p>
+  </div>
+
+  <!-- Tasks Table -->
+  <div *ngIf="!isLoading && filteredTasks.length > 0" class="tasks-table-container">
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of filteredTasks" [class.completed]="task.completed">
+          <td>{{ task.id }}</td>
+          <td class="title-cell">
+            <div *ngIf="editingTaskId !== task.id" class="task-title">
+              {{ task.title }}
+            </div>
+            <div *ngIf="editingTaskId === task.id" class="edit-input-container">
+              <input
+                type="text"
+                [(ngModel)]="editingTaskTitle"
+                class="edit-input"
+                placeholder="Edit task title"
+              />
+            </div>
+          </td>
+          <td>
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                [checked]="task.completed"
+                (change)="toggleTaskStatus(task)"
+                [disabled]="editingTaskId === task.id"
+              />
+              <span class="status-badge" [class.completed]="task.completed">
+                {{ task.completed ? 'Completed' : 'Pending' }}
+              </span>
+            </label>
+          </td>
+          <td class="actions-cell">
+            <div class="actions">
+              <button
+                *ngIf="editingTaskId !== task.id"
+                (click)="startEditingTask(task)"
+                class="btn btn-edit"
+                title="Edit task"
+              >
+                Edit
+              </button>
+              <button
+                *ngIf="editingTaskId === task.id"
+                (click)="saveEditedTask(task)"
+                class="btn btn-save"
+                title="Save task"
+              >
+                Save
+              </button>
+              <button
+                *ngIf="editingTaskId === task.id"
+                (click)="cancelEditing()"
+                class="btn btn-cancel"
+                title="Cancel editing"
+              >
+                Cancel
+              </button>
+              <button
+                (click)="deleteTask(task.id)"
+                class="btn btn-delete"
+                [disabled]="editingTaskId === task.id"
+                title="Delete task"
+              >
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tasks Count -->
+  <div *ngIf="!isLoading && tasks.length > 0" class="tasks-count">
+    Showing {{ filteredTasks.length }} of {{ tasks.length }} tasks
+  </div>
+</div>

@@ -1,0 +1,126 @@
+<div class="main-container">
+  <header class="header">
+    <h1>📋 Task Manager</h1>
+    <p>Simple Task Management with Angular</p>
+  </header>
+
+  <main class="content">
+    <div class="grid">
+      <aside class="form-panel">
+        <app-task-form (taskAdded)="taskList.onTaskAdded($event)"></app-task-form>
+      </aside>
+      <section class="list-panel">
+        <app-task-list #taskList></app-task-list>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Task Manager - Capgemini Training</p>
+  </footer>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #f5f7fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f5f7fa;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .header p {
+    font-size: 16px;
+    opacity: 0.9;
+  }
+
+  .content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+  }
+
+  .form-panel {
+    min-height: 500px;
+  }
+
+  .list-panel {
+    min-height: 500px;
+  }
+
+  .footer {
+    background: white;
+    border-top: 1px solid #e0e5f0;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .content {
+      padding: 30px 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 30px 15px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    .header p {
+      font-size: 14px;
+    }
+
+    .content {
+      padding: 20px 15px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+</style>

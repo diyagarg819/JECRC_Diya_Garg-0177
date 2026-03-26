@@ -19,7 +19,7 @@ export class ProfileComponent {
     name:     'Diya Garg',
     email:    'diya.garg@student.edu',
     phone:    '+91 98765 43210',
-    city:     'Mumbai, Maharashtra',
+    city:     'Jaipur, Rajasthan',
     joinDate: 'January 2026',
     avatar:   'DG'
   };

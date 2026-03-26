@@ -1,0 +1,64 @@
+<div class="form-container">
+  <h2>Add New Task</h2>
+  
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Task Title Input -->
+    <div class="form-group">
+      <label for="title">Task Title <span class="required">*</span></label>
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        placeholder="Enter task title"
+        class="form-input"
+        [class.is-invalid]="title?.invalid && title?.touched"
+      />
+      <div *ngIf="title?.invalid && title?.touched" class="error-message">
+        <span *ngIf="title?.hasError('required')">Task title is required</span>
+        <span *ngIf="title?.hasError('minlength')">Title must be at least 3 characters</span>
+      </div>
+    </div>
+
+    <!-- Completed Checkbox -->
+    <div class="form-group">
+      <label for="completed" class="checkbox-label">
+        <input
+          type="checkbox"
+          id="completed"
+          formControlName="completed"
+          class="checkbox-input"
+        />
+        <span>Mark as completed</span>
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        class="btn btn-primary"
+        [disabled]="isSubmitting || taskForm.invalid"
+      >
+        {{ isSubmitting ? 'Adding...' : 'Add Task' }}
+      </button>
+      <button 
+        type="button" 
+        class="btn btn-secondary"
+        (click)="resetForm()"
+        [disabled]="isSubmitting"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
