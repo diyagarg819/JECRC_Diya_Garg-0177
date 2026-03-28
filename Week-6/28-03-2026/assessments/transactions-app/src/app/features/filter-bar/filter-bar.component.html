@@ -1,0 +1,46 @@
+<div class="filter-bar">
+  <div class="filter-bar__left">
+    <div class="filter-group">
+      <label for="dateInput" class="filter-label">Date</label>
+      <input
+        id="dateInput"
+        type="date"
+        class="input-date"
+        [(ngModel)]="selectedDate"
+      />
+    </div>
+
+    <div class="filter-group">
+      <label for="typeSelect" class="filter-label">Type</label>
+      <select id="typeSelect" class="input-select" [(ngModel)]="selectedType">
+        <option value="">All</option>
+        <option value="0">Credit</option>
+        <option value="1">Debit</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="searchInput" class="filter-label">Search</label>
+      <input
+        id="searchInput"
+        type="text"
+        class="input-text"
+        placeholder="Description..."
+        [(ngModel)]="searchText"
+        (keydown.enter)="onFilter()"
+      />
+    </div>
+
+    <div class="filter-actions">
+      <button class="btn btn--primary" (click)="onFilter()">Filter</button>
+      <button class="btn btn--ghost" *ngIf="hasFilters" (click)="onClear()">Clear</button>
+    </div>
+  </div>
+
+  <div class="filter-bar__right">
+    <button class="btn btn--accent" (click)="onAdd()">
+      <span class="btn__icon">+</span>
+      Add Transaction
+    </button>
+  </div>
+</div>

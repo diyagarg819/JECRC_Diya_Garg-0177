@@ -1,0 +1,50 @@
+<div class="table-wrapper">
+  <table class="tx-table" *ngIf="displayedTransactions.length > 0; else emptyState">
+    <thead>
+      <tr>
+        <th class="col-date">Date</th>
+        <th class="col-desc">Description</th>
+        <th class="col-type">Type</th>
+        <th class="col-amount sortable" (click)="onAmountHeaderClick()">
+          Amount ($)
+          <span class="sort-icon" [class.active]="isSortedByAmount">↑</span>
+        </th>
+        <th class="col-balance">Balance</th>
+        <th class="col-actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let tx of displayedTransactions"
+        [class.row--credit]="tx.type === 0"
+        [class.row--debit]="tx.type === 1"
+      >
+        <td class="col-date">{{ tx.date }}</td>
+        <td class="col-desc">{{ tx.description }}</td>
+        <td class="col-type">
+          <span class="badge" [class.badge--credit]="tx.type === 0" [class.badge--debit]="tx.type === 1">
+            {{ getTypeLabel(tx.type) }}
+          </span>
+        </td>
+        <td class="col-amount" [class.amount--credit]="tx.type === 0" [class.amount--debit]="tx.type === 1">
+          {{ tx.amount | number:'1.2-2' }}
+        </td>
+        <td class="col-balance">{{ tx.balance }}</td>
+        <td class="col-actions">
+          <div class="action-btns">
+            <button class="btn-icon btn-icon--edit" title="Edit" (click)="onEdit(tx)">✏️</button>
+            <button class="btn-icon btn-icon--delete" title="Delete" (click)="onDelete(tx)">🗑️</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <div class="empty-state__icon">📋</div>
+      <p class="empty-state__title">No transactions found</p>
+      <p class="empty-state__sub">Try adjusting the date filter or add a new transaction.</p>
+    </div>
+  </ng-template>
+</div>

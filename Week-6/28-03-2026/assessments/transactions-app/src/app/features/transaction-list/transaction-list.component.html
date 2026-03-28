@@ -1,0 +1,62 @@
+<div class="page">
+  <!-- Header -->
+  <header class="page__header">
+    <div class="header__brand">
+      <div class="brand-logo">💳</div>
+      <div>
+        <h1 class="header__title">Transaction Ledger</h1>
+        <p class="header__subtitle">Manage and track your account activity</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <app-filter-bar
+    (filterApplied)="onFilterApplied($event)"
+    (addClicked)="onAddClicked()"
+  ></app-filter-bar>
+
+  <!-- Active filter chip -->
+  <div class="active-filter" *ngIf="activeFilter">
+    <span class="filter-chip">
+      🔍 Filters active
+      <span *ngIf="activeFilter.date"> | 📅 {{ activeFilter.date }}</span>
+      <span *ngIf="activeFilter.type === 0"> | Credit</span>
+      <span *ngIf="activeFilter.type === 1"> | Debit</span>
+      <span *ngIf="activeFilter.search"> | "{{ activeFilter.search }}"</span>
+    </span>
+  </div>
+
+  <!-- Loading -->
+  <div class="state-loading" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Loading transactions…</p>
+  </div>
+
+  <!-- Error -->
+  <div class="state-error" *ngIf="errorMessage && !isLoading">
+    <span>⚠️ {{ errorMessage }}</span>
+    <button class="btn btn--ghost btn--sm" (click)="loadTransactions()">Retry</button>
+  </div>
+
+  <!-- Table -->
+  <app-transaction-table
+    *ngIf="!isLoading && !errorMessage"
+    [transactions]="transactions"
+    (editClicked)="onEditClicked($event)"
+    (deleteClicked)="onDeleteClicked($event)"
+  ></app-transaction-table>
+
+  <!-- Row count -->
+  <div class="table-footer" *ngIf="!isLoading && !errorMessage">
+    <span>{{ transactions.length }} record{{ transactions.length !== 1 ? 's' : '' }} found</span>
+  </div>
+
+  <!-- Delete Confirm Modal -->
+  <app-delete-confirm
+    *ngIf="txToDelete"
+    [transaction]="txToDelete"
+    (confirmed)="onDeleteConfirmed()"
+    (cancelled)="onDeleteCancelled()"
+  ></app-delete-confirm>
+</div>

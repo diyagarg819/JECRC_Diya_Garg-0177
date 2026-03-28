@@ -1,0 +1,24 @@
+<div class="modal-backdrop" (click)="onCancel()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div class="modal__header">
+      <span class="modal__icon modal__icon--danger">⚠️</span>
+      <h2 class="modal__title">Delete Transaction</h2>
+    </div>
+    <div class="modal__body" *ngIf="transaction">
+      <p class="modal__desc">Are you sure you want to delete this transaction?</p>
+      <div class="modal__detail">
+        <span class="detail-label">Date:</span>
+        <span>{{ transaction.date }}</span>
+        <span class="detail-label">Amount:</span>
+        <span>${{ transaction.amount | number:'1.2-2' }}</span>
+        <span class="detail-label">Description:</span>
+        <span>{{ transaction.description }}</span>
+      </div>
+      <p class="modal__warning">This action cannot be undone.</p>
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn--ghost" (click)="onCancel()">Cancel</button>
+      <button class="btn btn--danger" (click)="onConfirm()">Delete</button>
+    </div>
+  </div>
+</div>
