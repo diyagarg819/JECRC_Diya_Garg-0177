@@ -1,0 +1,15 @@
+﻿  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\Program.cs(15,18): error CS1061: 'IServiceCollection' does not contain a definition for 'AddSwaggerGen' and no accessible extension method 'AddSwaggerGen' accepting a first argument of type 'IServiceCollection' could be found (are you missing a using directive or an assembly reference?) [C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\backend.csproj]
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\Program.cs(34,9): error CS1061: 'WebApplication' does not contain a definition for 'UseSwagger' and no accessible extension method 'UseSwagger' accepting a first argument of type 'WebApplication' could be found (are you missing a using directive or an assembly reference?) [C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\backend.csproj]
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\Program.cs(35,9): error CS1061: 'WebApplication' does not contain a definition for 'UseSwaggerUI' and no accessible extension method 'UseSwaggerUI' accepting a first argument of type 'WebApplication' could be found (are you missing a using directive or an assembly reference?) [C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\backend.csproj]
+
+Build FAILED.
+
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\Program.cs(15,18): error CS1061: 'IServiceCollection' does not contain a definition for 'AddSwaggerGen' and no accessible extension method 'AddSwaggerGen' accepting a first argument of type 'IServiceCollection' could be found (are you missing a using directive or an assembly reference?) [C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\backend.csproj]
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\Program.cs(34,9): error CS1061: 'WebApplication' does not contain a definition for 'UseSwagger' and no accessible extension method 'UseSwagger' accepting a first argument of type 'WebApplication' could be found (are you missing a using directive or an assembly reference?) [C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\backend.csproj]
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\Program.cs(35,9): error CS1061: 'WebApplication' does not contain a definition for 'UseSwaggerUI' and no accessible extension method 'UseSwaggerUI' accepting a first argument of type 'WebApplication' could be found (are you missing a using directive or an assembly reference?) [C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-7\04-04-2026\assessments\backend\backend.csproj]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:03.05
