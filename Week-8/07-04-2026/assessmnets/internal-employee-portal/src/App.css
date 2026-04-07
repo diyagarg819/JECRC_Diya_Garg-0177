@@ -1,0 +1,25 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left var(--transition-slow);
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg-primary);
+}
+
+/* When sidebar is collapsed, adjust main area */
+.sidebar--collapsed ~ .app-main,
+.sidebar--collapsed + .app-main {
+  /* This is handled via JS since sibling selectors won't work across React tree */
+}
