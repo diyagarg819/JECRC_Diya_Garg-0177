@@ -1,0 +1,55 @@
+.counter-card {
+  width: min(420px, 92vw);
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f9fbff, #edf4ff);
+  box-shadow: 0 10px 30px rgba(25, 42, 70, 0.16);
+  text-align: center;
+}
+
+.counter-title {
+  margin: 0 0 20px;
+  color: #14213d;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.counter-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.counter-btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.counter-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.28);
+}
+
+.counter-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.counter-btn-danger {
+  background-color: #e11d48;
+}
+
+.counter-btn-danger:hover {
+  background-color: #be123c;
+  box-shadow: 0 8px 16px rgba(225, 29, 72, 0.28);
+}
