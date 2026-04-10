@@ -1,0 +1,97 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using LibraryManagement.Models;
+using LibraryManagement.dto;
+
+namespace LibraryManagement.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class BookController : ControllerBase
+    {
+        private static List<Book> books = new List<Book>();
+
+        [HttpPost]
+        public IActionResult CreateBook(BookStructuredto bookDto)
+        {
+            var book = new Book
+            {
+                Id = bookDto.Id == Guid.Empty ? Guid.NewGuid() : bookDto.Id,
+                BookName = bookDto.BookName,
+                Author = bookDto.Author,
+                ISBN = bookDto.ISBN,
+                Genre = bookDto.Genre,
+                PublishedDate = bookDto.PublishedDate,
+                TotalCopies = bookDto.TotalCopies,
+                AvailableCopies = bookDto.AvailableCopies,
+                Publisher = bookDto.Publisher,
+                Language = bookDto.Language
+            };
+
+            books.Add(book);
+
+            var response = new BookResponsedto
+            {
+                BookName = book.BookName,
+                Author = book.Author,
+                ISBN = book.ISBN,
+                Genre = book.Genre,
+                PublishedDate = book.PublishedDate,
+                AvailableCopies = book.AvailableCopies,
+                Publisher = book.Publisher,
+                Language = book.Language
+            };
+
+            return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, response);
+        }
+
+        [HttpGet]
+        public IActionResult ShowBook()
+        {
+            return Ok(books);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetBookById(Guid id)
+        {
+            var book = books.FirstOrDefault(b => b.Id == id);
+
+            if (book == null)
+                return NotFound("Book not found");
+
+            return Ok(book);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(Guid id, BookStructuredto bookDto)
+        {
+            var book = books.FirstOrDefault(b => b.Id == id);
+
+            if (book == null)
+                return NotFound("Book not found");
+
+            book.BookName = bookDto.BookName;
+            book.Author = bookDto.Author;
+            book.ISBN = bookDto.ISBN;
+            book.Genre = bookDto.Genre;
+            book.PublishedDate = bookDto.PublishedDate;
+            book.TotalCopies = bookDto.TotalCopies;
+            book.AvailableCopies = bookDto.AvailableCopies;
+            book.Publisher = bookDto.Publisher;
+            book.Language = bookDto.Language;
+
+            return Ok(book);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBook(Guid id)
+        {
+            var book = books.FirstOrDefault(b => b.Id == id);
+
+            if (book == null)
+                return NotFound("Book not found");
+
+            books.Remove(book);
+            return Ok("Book deleted successfully");
+        }
+    }
+}
