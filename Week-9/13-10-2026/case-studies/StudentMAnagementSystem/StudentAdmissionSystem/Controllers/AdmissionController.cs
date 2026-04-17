@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using StudentAdmissionSystem.Model;
 
 namespace StudentAdmissionSystem.Controllers
@@ -7,22 +8,16 @@ namespace StudentAdmissionSystem.Controllers
     [ApiController]
     public class AdmissionController : ControllerBase
     {
-        private static List<Admission> admissions = new List<Admission>();
+        private static List<Admission> admissions = new();
 
         [HttpGet]
-
-        public IActionResult Get() => Ok(admissions); 
+        public IActionResult Get() => Ok(admissions);
 
         [HttpPost]
-
-        public IActionResult Post(Admission admission)
+        public IActionResult Add(Admission admission)
         {
-            if (admission == null)
-            {
-                return BadRequest("Admission cannot be null.");
-            }
             admissions.Add(admission);
-            return CreatedAtAction(nameof(Get), new { id = admission.Id }, admission);
+            return Ok(admission);
         }
     }
 }

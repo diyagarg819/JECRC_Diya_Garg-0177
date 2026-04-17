@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentMAnagementSystem\\",
+  "WorkspaceRootPath": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C809490-59CB-4FB0-B68C-D443A8A20058}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-9\\13-10-2026\\case-studies\\studentmanagementsystem\\studentadmissionsystem\\controllers\\admissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C809490-59CB-4FB0-B68C-D443A8A20058}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|solutionrelative:studentadmissionsystem\\controllers\\admissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37C3A84C-E30C-43CE-A274-0D38A8F3B697}|ApiGateway\\ApiGateway.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37C3A84C-E30C-43CE-A274-0D38A8F3B697}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C809490-59CB-4FB0-B68C-D443A8A20058}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-9\\13-10-2026\\case-studies\\studentmanagementsystem\\studentadmissionsystem\\model\\admission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C809490-59CB-4FB0-B68C-D443A8A20058}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|solutionrelative:studentadmissionsystem\\model\\admission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37C3A84C-E30C-43CE-A274-0D38A8F3B697}|ApiGateway\\ApiGateway.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{37C3A84C-E30C-43CE-A274-0D38A8F3B697}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C809490-59CB-4FB0-B68C-D443A8A20058}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-9\\13-10-2026\\case-studies\\studentmanagementsystem\\studentadmissionsystem\\studentadmissionsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1C809490-59CB-4FB0-B68C-D443A8A20058}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|solutionrelative:studentadmissionsystem\\studentadmissionsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D668A03A-3E91-44E9-8213-8F467FCEF159}|StudentAttendenceSystem\\StudentAttendenceSystem.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\studentattendencesystem\\controllers\\attendencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D668A03A-3E91-44E9-8213-8F467FCEF159}|StudentAttendenceSystem\\StudentAttendenceSystem.csproj|solutionrelative:studentattendencesystem\\controllers\\attendencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99EF4D47-4BB6-4188-98AD-BE1DA452374D}|StudentManagementSystem\\StudentManagementSystem.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-9\\13-10-2026\\case-studies\\studentmanagementsystem\\studentmanagementsystem\\studentmanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{99EF4D47-4BB6-4188-98AD-BE1DA452374D}|StudentManagementSystem\\StudentManagementSystem.csproj|solutionrelative:studentmanagementsystem\\studentmanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{E7484CFB-DA97-4F00-8638-B07BA5A4EAA1}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\studentadmissionsystem\\controllers\\admissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7484CFB-DA97-4F00-8638-B07BA5A4EAA1}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|solutionrelative:studentadmissionsystem\\controllers\\admissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A21C0A1-70C4-4D82-9AB3-E15DE1B304DB}|StudentAttendanceSystem\\StudentAttendanceSystem.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-9\\13-10-2026\\case-studies\\studentmanagementsystem\\studentattendancesystem\\studentattendancesystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8A21C0A1-70C4-4D82-9AB3-E15DE1B304DB}|StudentAttendanceSystem\\StudentAttendanceSystem.csproj|solutionrelative:studentattendancesystem\\studentattendancesystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{49E1DFDD-07BB-48B3-A53C-0B9210CD5E2A}|StudentManagementSystem\\StudentManagementSystem.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\studentmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49E1DFDD-07BB-48B3-A53C-0B9210CD5E2A}|StudentManagementSystem\\StudentManagementSystem.csproj|solutionrelative:studentmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D668A03A-3E91-44E9-8213-8F467FCEF159}|StudentAttendenceSystem\\StudentAttendenceSystem.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\studentattendencesystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D668A03A-3E91-44E9-8213-8F467FCEF159}|StudentAttendenceSystem\\StudentAttendenceSystem.csproj|solutionrelative:studentattendencesystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7484CFB-DA97-4F00-8638-B07BA5A4EAA1}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|d:\\capgemini\\datewise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\studentmanagementsystem\\studentadmissionsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7484CFB-DA97-4F00-8638-B07BA5A4EAA1}|StudentAdmissionSystem\\StudentAdmissionSystem.csproj|solutionrelative:studentadmissionsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdmissionController.cs",
-              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentMAnagementSystem\\StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
-              "RelativeDocumentMoniker": "StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
-              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentMAnagementSystem\\StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
-              "RelativeToolTip": "StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T05:40:19.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Admission.cs",
-              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentAdmissionSystem\\Model\\Admission.cs",
-              "RelativeDocumentMoniker": "StudentAdmissionSystem\\Model\\Admission.cs",
-              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentAdmissionSystem\\Model\\Admission.cs",
-              "RelativeToolTip": "StudentAdmissionSystem\\Model\\Admission.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T05:39:01.571Z",
+              "Title": "ocelot.json",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\ApiGateway\\ocelot.json",
+              "RelativeDocumentMoniker": "ApiGateway\\ocelot.json",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\ApiGateway\\ocelot.json",
+              "RelativeToolTip": "ApiGateway\\ocelot.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-13T09:46:01.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StudentManagementSystem",
-              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentManagementSystem\\StudentManagementSystem.csproj",
-              "RelativeDocumentMoniker": "StudentManagementSystem\\StudentManagementSystem.csproj",
-              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentManagementSystem\\StudentManagementSystem.csproj",
-              "RelativeToolTip": "StudentManagementSystem\\StudentManagementSystem.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-13T05:33:26.733Z",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\ApiGateway\\Program.cs",
+              "RelativeDocumentMoniker": "ApiGateway\\Program.cs",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\ApiGateway\\Program.cs",
+              "RelativeToolTip": "ApiGateway\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T09:45:18.762Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "StudentAttendanceSystem",
-              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentAttendanceSystem\\StudentAttendanceSystem.csproj",
-              "RelativeDocumentMoniker": "StudentAttendanceSystem\\StudentAttendanceSystem.csproj",
-              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentAttendanceSystem\\StudentAttendanceSystem.csproj",
-              "RelativeToolTip": "StudentAttendanceSystem\\StudentAttendanceSystem.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-13T05:33:08.247Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "StudentManagementSystem\\Program.cs",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentManagementSystem\\Program.cs",
+              "RelativeToolTip": "StudentManagementSystem\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwB8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T09:21:32.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAttendenceSystem\\Program.cs",
+              "RelativeDocumentMoniker": "StudentAttendenceSystem\\Program.cs",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAttendenceSystem\\Program.cs",
+              "RelativeToolTip": "StudentAttendenceSystem\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwB8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T09:20:44.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAdmissionSystem\\Program.cs",
+              "RelativeDocumentMoniker": "StudentAdmissionSystem\\Program.cs",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAdmissionSystem\\Program.cs",
+              "RelativeToolTip": "StudentAdmissionSystem\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwB8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T09:19:40.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdmissionController.cs",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
+              "RelativeDocumentMoniker": "StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
+              "RelativeToolTip": "StudentAdmissionSystem\\Controllers\\AdmissionController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwAoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T05:53:39.012Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "StudentAdmissionSystem",
-              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentAdmissionSystem\\StudentAdmissionSystem.csproj",
-              "RelativeDocumentMoniker": "StudentAdmissionSystem\\StudentAdmissionSystem.csproj",
-              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-9\\13-10-2026\\case-studies\\StudentManagementSystem\\StudentAdmissionSystem\\StudentAdmissionSystem.csproj",
-              "RelativeToolTip": "StudentAdmissionSystem\\StudentAdmissionSystem.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-13T05:32:47.744Z",
+              "Title": "AttendenceController.cs",
+              "DocumentMoniker": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAttendenceSystem\\Controllers\\AttendenceController.cs",
+              "RelativeDocumentMoniker": "StudentAttendenceSystem\\Controllers\\AttendenceController.cs",
+              "ToolTip": "D:\\CapGemini\\DateWise\\week-09-backend\\13-04-2026\\case_studies\\microservicesdemo\\StudentManagementSystem\\StudentAttendenceSystem\\Controllers\\AttendenceController.cs",
+              "RelativeToolTip": "StudentAttendenceSystem\\Controllers\\AttendenceController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T05:49:40.388Z",
               "EditorCaption": ""
             }
           ]

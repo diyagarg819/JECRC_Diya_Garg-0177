@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "StudentAdmissionSystem.Controllers.AdmissionController",
+    "Method": "Get",
+    "RelativePath": "api/Admission",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StudentAdmissionSystem.Controllers.AdmissionController",
+    "Method": "Add",
+    "RelativePath": "api/Admission",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "admission",
+        "Type": "StudentAdmissionSystem.Model.Admission",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
