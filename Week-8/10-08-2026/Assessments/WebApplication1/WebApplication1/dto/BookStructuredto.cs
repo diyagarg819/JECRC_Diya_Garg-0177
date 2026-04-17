@@ -24,7 +24,7 @@ namespace LibraryManagement.dto
         [Required]
         public string Genre { get; set; } = string.Empty;
 
-        [DataType(DataType.Date)]
+        
         public DateTime? PublishedDate { get; set; }
 
         [Required]

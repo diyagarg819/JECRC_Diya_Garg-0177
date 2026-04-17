@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\dto\\bookstructuredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|solutionrelative:webapplication1\\dto\\bookstructuredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\dto\\bookstructuredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\dto\\bookstructuredto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|solutionrelative:webapplication1\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\attribute\\isbn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\attribute\\isbn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\attribute\\isbn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\attribute\\isbn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|solutionrelative:webapplication1\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\dto\\bookresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\dto\\bookresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\dto\\bookresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|solutionrelative:webapplication1\\dto\\bookresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBE3BE33-AD55-4EA2-8293-A1F1B5082616}|WebApplication1\\LibraryManagement.csproj|solutionrelative:webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-8\\10-08-2026\\assessments\\webapplication1\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1139E486-A36B-6B58-4965-3753D45010A4}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +46,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ISBN.cs",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\attribute\\ISBN.cs",
               "RelativeDocumentMoniker": "WebApplication1\\attribute\\ISBN.cs",
@@ -54,12 +54,11 @@
               "RelativeToolTip": "WebApplication1\\attribute\\ISBN.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T10:10:03.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T10:10:03.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WeatherForecastController.cs",
@@ -67,12 +66,11 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T09:07:40.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T09:07:40.161Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "BookResponsedto.cs",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\dto\\BookResponsedto.cs",
               "RelativeDocumentMoniker": "WebApplication1\\dto\\BookResponsedto.cs",
@@ -80,12 +78,11 @@
               "RelativeToolTip": "WebApplication1\\dto\\BookResponsedto.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAkwAUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T09:15:29.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T09:15:29.278Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\entities\\Book.cs",
               "RelativeDocumentMoniker": "WebApplication1\\entities\\Book.cs",
@@ -93,12 +90,11 @@
               "RelativeToolTip": "WebApplication1\\entities\\Book.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T09:11:44.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T09:11:44.832Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BookController.cs",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\BookController.cs",
@@ -106,8 +102,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\BookController.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAA6wAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T09:09:07.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T09:09:07.53Z"
             },
             {
               "$type": "Document",
@@ -117,14 +112,14 @@
               "RelativeDocumentMoniker": "WebApplication1\\dto\\BookStructuredto.cs",
               "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\dto\\BookStructuredto.cs",
               "RelativeToolTip": "WebApplication1\\dto\\BookStructuredto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwBoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T08:53:44.623Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
@@ -132,21 +127,23 @@
               "RelativeToolTip": "WebApplication1\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T08:50:26.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T08:50:26.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LibraryManagement",
+              "DocumentIndex": 7,
+              "Title": "WebApplication1.csproj",
               "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
               "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
               "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-8\\10-08-2026\\Assessments\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
               "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-10T08:50:02.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T08:50:02.561Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
