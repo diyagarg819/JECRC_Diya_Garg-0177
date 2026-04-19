@@ -1,0 +1,37 @@
+Answer a- Why DashboardComponent does not update its view ? 
+DashboardComponent is using OnPush change detection strategy. This strategy works differently from the default one. Instead of checking the component on every change detection cycle, OnPush only checks the component when it receives a new input reference.
+In our case, the updateLocally() method is doing this:
+this.userStats.score = 100;
+This line is just changing a property inside the existing object. It is not creating a new object. So the reference (memory address) of userStats remains exactly the same before and after this line runs. Angular's OnPush strategy compares the old and new reference of the input. Since both are pointing to the same object, Angular thinks nothing has changed and simply skips re-rendering the DashboardComponent view.
+In simple words, OnPush does not look inside the object to check if something changed. It only checks whether the object itself was replaced with a new one. Since we did not replace it, the view does not update.
+
+Answer b- Why StatsComponent shows the updated value ?
+StatsComponent is using the Default change detection strategy. This means Angular checks this component on every single change detection cycle, no matter where the change came from.
+Now here is the important thing to understand. When Angular runs change detection, it walks down the component tree from top to bottom. Even though DashboardComponent skipped its own check because of OnPush, Angular still continued walking down and reached StatsComponent.
+Since StatsComponent is Default strategy, it re-reads all its bindings fresh. At this point the userStats object in memory already has score set to 100 because we mutated it earlier in DashboardComponent. So StatsComponent just reads that updated value and displays it on screen.
+Both DashboardComponent and StatsComponent are pointing to the same object in memory. The mutation already happened. DashboardComponent refused to re-render because its reference did not change. But StatsComponent had no such restriction, so it read the new value and updated its view.
+
+Answer c -  How to fix DashboardComponent without changing strategy to Default?
+There are three practical ways to fix this while keeping the OnPush strategy.
+Fix 1 - Replace the object with a new one using spread operator
+Instead of mutating the existing object, we create a brand new object like this:
+updateLocally() {
+this.userStats = { ...this.userStats, score: 100 };
+}
+This creates a completely new object with a new memory address. Now when Angular checks the input reference, it sees a different reference than before and triggers the view update. This is the most recommended and clean approach because it follows the idea of immutability which OnPush is designed to work with.
+Fix 2 - Use markForCheck() from ChangeDetectorRef
+We can inject ChangeDetectorRef and call markForCheck() after mutating the object like this:
+constructor(private cdr: ChangeDetectorRef) {}
+updateLocally() {
+this.userStats.score = 100;
+this.cdr.markForCheck();
+}
+markForCheck() tells Angular to include this component in the next change detection cycle. It does not run immediately but schedules the check for the next cycle. This is useful when you are working with async operations or observables.
+Fix 3 - Use detectChanges() from ChangeDetectorRef
+constructor(private cdr: ChangeDetectorRef) {}
+updateLocally() {
+this.userStats.score = 100;
+this.cdr.detectChanges();
+}
+detectChanges() runs change detection immediately and synchronously for that component and its children. This is useful when you need the view to update right away, for example after a setTimeout or an API response.
+Among all three fixes, the spread operator approach is considered the best practice because it avoids mutation, keeps the data predictable, and works naturally with OnPush without needing any extra services or manual calls.
