@@ -1,0 +1,58 @@
+<div class="table-wrapper">
+  <div class="table-meta">
+    <span class="result-count">{{ displayedProducts.length }} product{{ displayedProducts.length !== 1 ? 's' : '' }}</span>
+  </div>
+
+  <div class="table-scroll">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th class="col-id">ID</th>
+          <th class="col-name">Product Name</th>
+          <th class="col-category">Category</th>
+          <th class="col-price sortable" (click)="togglePriceSort()">
+            <span class="th-content">
+              Price ($)
+              <span class="sort-icon" [class.active]="priceSortAsc !== null">{{ getSortIcon() }}</span>
+            </span>
+          </th>
+          <th class="col-stock">Stock</th>
+          <th class="col-status">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="displayedProducts.length === 0">
+          <td colspan="6" class="empty-state">
+            <div class="empty-content">
+              <span class="empty-icon">◈</span>
+              <p>No products match your filters</p>
+            </div>
+          </td>
+        </tr>
+        <tr
+          *ngFor="let product of displayedProducts; let i = index"
+          class="product-row"
+          [class.row-odd]="i % 2 === 1"
+        >
+          <td class="col-id">
+            <span class="id-badge">#{{ product.id }}</span>
+          </td>
+          <td class="col-name">{{ product.name }}</td>
+          <td class="col-category">
+            <span class="category-tag">{{ product.category }}</span>
+          </td>
+          <td class="col-price">
+            <span class="price-value">{{ product.price | number:'1.2-2' }}</span>
+          </td>
+          <td class="col-stock">{{ product.stock }}</td>
+          <td class="col-status">
+            <span class="status-badge" [ngClass]="'status-' + getStockStatus(product.stock)">
+              <span class="status-dot"></span>
+              {{ product.stock === 0 ? 'Out of Stock' : product.stock <= 5 ? 'Low Stock' : 'In Stock' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

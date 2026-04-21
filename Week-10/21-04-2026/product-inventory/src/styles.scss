@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface-raised: #181c26;
+  --surface-alt: #111419;
+  --surface-hover: #1a1f2b;
+  --border: #242836;
+  --border-subtle: #1a1e29;
+  --accent: #63cab7;
+  --accent-dim: rgba(99, 202, 183, 0.15);
+  --text-primary: #e8ecf4;
+  --text-muted: #5a6280;
+  --tag-bg: rgba(99, 202, 183, 0.1);
+  --tag-text: #63cab7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}

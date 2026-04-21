@@ -1,0 +1,44 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">⬡</span>
+        <div class="brand-text">
+          <h1>Inventory</h1>
+          <span class="brand-sub">Product Management System</span>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip">
+          <span class="stat-value">{{ totalProducts }}</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-chip stat-green">
+          <span class="stat-value">{{ inStockCount }}</span>
+          <span class="stat-label">In Stock</span>
+        </div>
+        <div class="stat-chip stat-red">
+          <span class="stat-value">{{ outOfStockCount }}</span>
+          <span class="stat-label">Out of Stock</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="controls-bar">
+      <app-category-filter
+        [categories]="categories"
+        (filterChange)="onCategoryFilter($event)"
+      ></app-category-filter>
+
+      <div class="controls-right">
+        <app-stock-filter
+          (stockFilterChange)="onStockFilter($event)"
+        ></app-stock-filter>
+      </div>
+    </div>
+
+    <app-product-table [products]="filteredProducts"></app-product-table>
+  </main>
+</div>

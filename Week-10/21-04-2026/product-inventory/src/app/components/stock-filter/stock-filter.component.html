@@ -1,0 +1,12 @@
+<label class="stock-toggle">
+  <input
+    type="checkbox"
+    [(ngModel)]="inStockOnly"
+    (change)="onToggle()"
+    class="toggle-input"
+  />
+  <span class="toggle-track">
+    <span class="toggle-thumb"></span>
+  </span>
+  <span class="toggle-label">Show In-Stock Only</span>
+</label>
