@@ -1,0 +1,94 @@
+<div class="weather-wrapper">
+  <!-- Background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="card">
+    <!-- Header -->
+    <div class="card-header">
+      <div class="header-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h1>WeatherSphere</h1>
+        <p>Search any city for live conditions</p>
+      </div>
+    </div>
+
+    <!-- Search Input -->
+    <div class="search-bar">
+      <div class="search-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+      <input
+        data-test-id="app-input"
+        type="text"
+        class="city-input"
+        placeholder="Enter city name..."
+        [value]="searchInput"
+        (input)="onSearch($event.target.value)"
+        autocomplete="off"
+      />
+      <div class="input-glow"></div>
+    </div>
+
+    <!-- Weather Details -->
+    <div *ngIf="searched && result" data-test-id="weather-details" class="weather-details fade-in">
+      <div class="city-banner">
+        <div class="city-name-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          {{ result.name }}
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <!-- Temperature -->
+        <div data-test-id="output-temperature" class="stat-card temp-card">
+          <div class="stat-icon">🌡️</div>
+          <div class="stat-label">Temperature</div>
+          <div class="stat-value">{{ result.temperature }}</div>
+        </div>
+
+        <!-- Wind -->
+        <div data-test-id="output-wind" class="stat-card wind-card">
+          <div class="stat-icon">💨</div>
+          <div class="stat-label">Wind</div>
+          <div class="stat-value">{{ result.wind }}</div>
+        </div>
+
+        <!-- Humidity -->
+        <div data-test-id="output-humidity" class="stat-card humidity-card">
+          <div class="stat-icon">💧</div>
+          <div class="stat-label">Humidity</div>
+          <div class="stat-value">{{ result.humidity }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results -->
+    <div *ngIf="searched && !result" data-test-id="no-results" class="no-results fade-in">
+      <div class="no-results-icon">🌫️</div>
+      <p class="no-results-title">No Results Found</p>
+      <p class="no-results-sub">Try searching for another city</p>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!searched" class="empty-state">
+      <div class="empty-orbs">
+        <span>🌤️</span>
+        <span>🌧️</span>
+        <span>❄️</span>
+      </div>
+      <p>Start typing a city name above</p>
+    </div>
+  </div>
+</div>
