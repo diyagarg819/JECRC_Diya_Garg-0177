@@ -1,0 +1,37 @@
+@model ProductManagement.DTOs.ProductRequestDTOs
+@{
+    Layout = null;
+    var productId = ViewBag.ProductId;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 24px; background: #f5f7fb; color: #1f2937; }
+        .container { max-width: 700px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+        .row { margin: 12px 0; }
+        .label { font-weight: 700; color: #374151; }
+        .value { margin-top: 4px; }
+        .actions { margin-top: 20px; }
+        a.btn { background: #2563eb; color: #fff; border-radius: 8px; padding: 10px 16px; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Details</h1>
+        <div class="row"><div class="label">Id</div><div class="value">@productId</div></div>
+        <div class="row"><div class="label">Name</div><div class="value">@Model?.Name</div></div>
+        <div class="row"><div class="label">Price</div><div class="value">@Model?.Price</div></div>
+        <div class="row"><div class="label">Category Id</div><div class="value">@Model?.CategoryId</div></div>
+        <div class="row"><div class="label">Description</div><div class="value">@Model?.Description</div></div>
+        <div class="row"><div class="label">Tag Ids</div><div class="value">@(Model?.TagIds != null && Model.TagIds.Any() ? string.Join(", ", Model.TagIds) : "-")</div></div>
+        <div class="actions">
+            <a class="btn" href="/Products/Edit/@productId">Edit</a>
+            <a class="btn" href="/Products">Back to list</a>
+        </div>
+    </div>
+</body>
+</html>

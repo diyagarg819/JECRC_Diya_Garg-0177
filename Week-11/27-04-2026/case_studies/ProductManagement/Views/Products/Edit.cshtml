@@ -1,0 +1,70 @@
+@model ProductManagement.DTOs.ProductRequestDTOs
+@{
+    Layout = null;
+    var productId = ViewBag.ProductId;
+    var categories = ViewBag.Categories as IEnumerable<dynamic>;
+    var tags = ViewBag.Tags as IEnumerable<dynamic>;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Product</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 24px; background: #f5f7fb; color: #1f2937; }
+        .container { max-width: 700px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+        label { display: block; margin: 14px 0 6px; font-weight: 600; }
+        input, textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
+        textarea { min-height: 110px; resize: vertical; }
+        .hint { color: #6b7280; font-size: .9rem; margin-top: 6px; }
+        .actions { margin-top: 20px; display: flex; gap: 12px; }
+        button, a.btn { border: 0; border-radius: 8px; padding: 10px 16px; text-decoration: none; display: inline-block; }
+        button { background: #2563eb; color: #fff; cursor: pointer; }
+        a.btn { background: #e5e7eb; color: #111827; }
+        .validation { color: #dc2626; margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Product</h1>
+        @Html.ValidationSummary(true, "", new { @class = "validation" })
+        <form method="post" action="/Products/Edit/@productId">
+            @Html.AntiForgeryToken()
+            <label>Name</label>
+            <input type="text" name="Name" value="@Model?.Name" required />
+
+            <label>Price</label>
+            <input type="number" name="Price" value="@Model?.Price" step="0.01" />
+
+            <label>Category Id</label>
+            <input type="number" name="CategoryId" value="@Model?.CategoryId" />
+            <div class="hint">
+                Available categories:
+                @(categories != null && categories.Any()
+                    ? string.Join(", ", categories.Select(c => $"{c.Id} - {c.Name}"))
+                    : "No categories available")
+            </div>
+
+            <label>Description</label>
+            <textarea name="Description">@Model?.Description</textarea>
+
+            <label>Tag Ids</label>
+            <input type="text" name="tagIds" value="@(Model?.TagIds != null ? string.Join(",", Model.TagIds) : "")" />
+            <div class="hint">
+                Enter comma-separated tag IDs, for example: 1,2,3
+                <br />
+                Available tags:
+                @(tags != null && tags.Any()
+                    ? string.Join(", ", tags.Select(t => $"{t.Id} - {t.Name}"))
+                    : "No tags available")
+            </div>
+
+            <div class="actions">
+                <button type="submit">Update</button>
+                <a class="btn" href="/Products">Back to list</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
