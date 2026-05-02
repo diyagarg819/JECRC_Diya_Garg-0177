@@ -1,0 +1,85 @@
+﻿@model Employee_Management.Models.Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+
+        <div class="mb-4">
+            <a asp-action="Index" class="text-decoration-none text-muted">
+                <i class="bi bi-arrow-left me-1"></i>Back to Directory
+            </a>
+        </div>
+
+        <div class="card shadow-sm border-0 overflow-hidden">
+            <!-- Header Banner -->
+            <div class="bg-primary p-4 text-white text-center">
+                <div class="avatar-circle-lg bg-white text-primary mx-auto mb-3">
+                    @Model.Name.Substring(0, 1).ToUpper()
+                </div>
+                <h3 class="mb-1 fw-bold">@Model.Name</h3>
+                <span class="badge bg-white text-primary px-3 py-2 fs-6">@Model.Department</span>
+            </div>
+
+            <!-- Details -->
+            <div class="card-body p-4">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="detail-card p-3 rounded bg-light">
+                            <div class="text-muted small mb-1"><i class="bi bi-hash me-1"></i>Employee ID</div>
+                            <div class="fw-bold fs-5">@Model.Id</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="detail-card p-3 rounded bg-light">
+                            <div class="text-muted small mb-1"><i class="bi bi-currency-rupee me-1"></i>Salary</div>
+                            <div class="fw-bold fs-5 text-success">₹@Model.Salary.ToString("N0")</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="detail-card p-3 rounded bg-light">
+                            <div class="text-muted small mb-1"><i class="bi bi-building me-1"></i>Department</div>
+                            <div class="fw-bold fs-6">@Model.Department</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="detail-card p-3 rounded bg-light">
+                            <div class="text-muted small mb-1"><i class="bi bi-calendar-event me-1"></i>Date Joined</div>
+                            <div class="fw-bold fs-6">@Model.CreatedDate.ToString("dd MMM yyyy")</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">
+                        <i class="bi bi-trash me-2"></i>Delete
+                    </a>
+                    <div class="d-flex gap-2">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-list me-2"></i>All Employees
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning text-dark fw-semibold">
+                            <i class="bi bi-pencil me-2"></i>Edit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .avatar-circle-lg {
+        width: 80px; height: 80px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 800; font-size: 2rem;
+    }
+    .detail-card { transition: background 0.2s; }
+    .detail-card:hover { background-color: #e9ecef !important; }
+</style>

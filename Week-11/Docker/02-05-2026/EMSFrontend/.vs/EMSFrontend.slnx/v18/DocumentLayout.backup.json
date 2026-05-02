@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\emsfrontend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\emsfrontend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\views\\employee\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\views\\employee\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\views\\employee\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\views\\employee\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\views\\employee\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsfrontend\\emsfrontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66DF42E0-3A88-4F29-9709-F9727FD950D3}|EMSFrontend\\EMSFrontend.csproj|solutionrelative:emsfrontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EMSFrontend",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\EMSFrontend.csproj",
+              "RelativeDocumentMoniker": "EMSFrontend\\EMSFrontend.csproj",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\EMSFrontend.csproj",
+              "RelativeToolTip": "EMSFrontend\\EMSFrontend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-02T11:02:38.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Dockerfile",
+              "RelativeDocumentMoniker": "EMSFrontend\\Dockerfile",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Dockerfile",
+              "RelativeToolTip": "EMSFrontend\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-02T11:03:02.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Program.cs",
+              "RelativeDocumentMoniker": "EMSFrontend\\Program.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Program.cs",
+              "RelativeToolTip": "EMSFrontend\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T10:33:48.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EMSFrontend\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EMSFrontend\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T10:09:27.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "EMSFrontend\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "EMSFrontend\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T09:36:29.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Create.cshtml",
+              "RelativeDocumentMoniker": "EMSFrontend\\Views\\Employee\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Create.cshtml",
+              "RelativeToolTip": "EMSFrontend\\Views\\Employee\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T09:07:28.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Index.cshtml",
+              "RelativeDocumentMoniker": "EMSFrontend\\Views\\Employee\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Index.cshtml",
+              "RelativeToolTip": "EMSFrontend\\Views\\Employee\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T09:07:08.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "EMSFrontend\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Models\\Employee.cs",
+              "RelativeToolTip": "EMSFrontend\\Models\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T08:58:59.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Details.cshtml",
+              "RelativeDocumentMoniker": "EMSFrontend\\Views\\Employee\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Details.cshtml",
+              "RelativeToolTip": "EMSFrontend\\Views\\Employee\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T09:07:48.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Delete.cshtml",
+              "RelativeDocumentMoniker": "EMSFrontend\\Views\\Employee\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Delete.cshtml",
+              "RelativeToolTip": "EMSFrontend\\Views\\Employee\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T09:08:03.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Edit.cshtml",
+              "RelativeDocumentMoniker": "EMSFrontend\\Views\\Employee\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSFrontend\\EMSFrontend\\Views\\Employee\\Edit.cshtml",
+              "RelativeToolTip": "EMSFrontend\\Views\\Employee\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T09:08:22.004Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

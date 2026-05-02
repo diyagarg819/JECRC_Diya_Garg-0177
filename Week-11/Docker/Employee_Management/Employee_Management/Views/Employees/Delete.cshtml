@@ -1,0 +1,62 @@
+﻿@model Employee_Management.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete Employee";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="mb-4">
+            <a asp-action="Index" class="text-decoration-none text-muted">
+                <i class="bi bi-arrow-left me-1"></i>Back to Directory
+            </a>
+        </div>
+
+        <div class="card shadow-sm border-0 border-top border-danger border-4">
+            <div class="card-body p-4 text-center">
+
+                <div class="text-danger mb-3">
+                    <i class="bi bi-exclamation-triangle-fill" style="font-size: 3rem;"></i>
+                </div>
+                <h4 class="fw-bold mb-1">Delete Employee</h4>
+                <p class="text-muted mb-4">This action cannot be undone. Are you sure?</p>
+
+                <div class="bg-light rounded p-3 mb-4 text-start">
+                    <table class="table table-borderless mb-0 small">
+                        <tr>
+                            <td class="text-muted fw-semibold" width="120">Name</td>
+                            <td class="fw-bold">@Model.Name</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted fw-semibold">Department</td>
+                            <td>@Model.Department</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted fw-semibold">Salary</td>
+                            <td class="text-success fw-semibold">₹@Model.Salary.ToString("N0")</td>
+                        </tr>
+                        <tr class="border-top-0">
+                            <td class="text-muted fw-semibold">Joined</td>
+                            <td>@Model.CreatedDate.ToString("dd MMM yyyy")</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex justify-content-center gap-3">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                            <i class="bi bi-x-circle me-2"></i>Cancel
+                        </a>
+                        <button type="submit" class="btn btn-danger px-4">
+                            <i class="bi bi-trash me-2"></i>Yes, Delete
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>

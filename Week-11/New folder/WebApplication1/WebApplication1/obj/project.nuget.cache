@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RZ8bZZEap0g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\New folder\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Diya\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.23.0\\microsoft.visualstudio.azure.containers.tools.targets.1.23.0.nupkg.sha512"
+  ],
+  "logs": []
+}

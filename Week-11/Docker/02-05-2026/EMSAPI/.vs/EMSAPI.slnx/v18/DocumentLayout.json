@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsapi\\emsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|solutionrelative:emsapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsapi\\emsapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|solutionrelative:emsapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsapi\\emsapi\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|solutionrelative:emsapi\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsapi\\emsapi\\emsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|solutionrelative:emsapi\\emsapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsapi\\emsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|solutionrelative:emsapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\02-05-2026\\emsapi\\emsapi\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0445237E-C1E1-4373-9DEE-D10EC4B0C0B8}|EMSAPI\\EMSAPI.csproj|solutionrelative:emsapi\\repository\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "EMSAPI\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "EMSAPI\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T10:47:09.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "EMSAPI\\Dockerfile",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Dockerfile",
+              "RelativeToolTip": "EMSAPI\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-02T10:35:04.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EMSAPI",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\EMSAPI.csproj",
+              "RelativeDocumentMoniker": "EMSAPI\\EMSAPI.csproj",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\EMSAPI.csproj",
+              "RelativeToolTip": "EMSAPI\\EMSAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-02T10:34:51.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EMSAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\appsettings.json",
+              "RelativeToolTip": "EMSAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-02T10:25:30.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EMSAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Program.cs",
+              "RelativeToolTip": "EMSAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T10:20:41.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Repository\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "EMSAPI\\Repository\\IEmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\02-05-2026\\EMSAPI\\EMSAPI\\Repository\\IEmployeeRepository.cs",
+              "RelativeToolTip": "EMSAPI\\Repository\\IEmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T10:18:36.683Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

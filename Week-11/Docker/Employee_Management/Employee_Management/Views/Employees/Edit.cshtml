@@ -1,0 +1,105 @@
+﻿@model Employee_Management.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+
+        <div class="mb-4">
+            <a asp-action="Index" class="text-decoration-none text-muted">
+                <i class="bi bi-arrow-left me-1"></i>Back to Directory
+            </a>
+        </div>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-warning text-dark py-3">
+                <h4 class="mb-0"><i class="bi bi-pencil-fill me-2"></i>Edit Employee</h4>
+            </div>
+            <div class="card-body p-4">
+
+                <div class="alert alert-light border mb-4 d-flex align-items-center gap-3">
+                    <div class="avatar-circle bg-warning text-dark">
+                        @Model.Name.Substring(0, 1).ToUpper()
+                    </div>
+                    <div>
+                        <div class="fw-bold">@Model.Name</div>
+                        <div class="text-muted small">ID: @Model.Id &nbsp;|&nbsp; Joined: @Model.CreatedDate.ToString("dd MMM yyyy")</div>
+                    </div>
+                </div>
+
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="CreatedDate" />
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="mb-4">
+                        <label asp-for="Name" class="form-label fw-semibold">
+                            <i class="bi bi-person me-1 text-warning"></i>Full Name <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="Name" class="form-control form-control-lg" />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Department" class="form-label fw-semibold">
+                            <i class="bi bi-building me-1 text-warning"></i>Department
+                        </label>
+                        <select asp-for="Department" class="form-select form-select-lg">
+                            <option value="">-- Select Department --</option>
+                            <option>Engineering</option>
+                            <option>Human Resources</option>
+                            <option>Finance</option>
+                            <option>Marketing</option>
+                            <option>Operations</option>
+                            <option>Sales</option>
+                            <option>Design</option>
+                            <option>Management</option>
+                        </select>
+                        <span asp-validation-for="Department" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Salary" class="form-label fw-semibold">
+                            <i class="bi bi-currency-rupee me-1 text-warning"></i>Salary (₹)
+                        </label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">₹</span>
+                            <input asp-for="Salary" class="form-control" type="number" min="0" step="1000" />
+                        </div>
+                        <span asp-validation-for="Salary" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                        <button type="submit" class="btn btn-warning px-5 text-dark fw-semibold">
+                            <i class="bi bi-save me-2"></i>Update Employee
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .avatar-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+</style>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

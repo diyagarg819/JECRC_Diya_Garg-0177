@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\Employee Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5E303E2-89EB-4841-A76B-E711F125CFD3}|Employee Management\\Employee Management.csproj|c:\\users\\diya\\onedrive\\desktop\\capgemini_training\\week-11\\docker\\employee management\\employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5E303E2-89EB-4841-A76B-E711F125CFD3}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\Employee Management\\Employee Management\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Employee Management\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-11\\Docker\\Employee Management\\Employee Management\\Models\\Employee.cs*",
+              "RelativeToolTip": "Employee Management\\Models\\Employee.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T06:43:13.5Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

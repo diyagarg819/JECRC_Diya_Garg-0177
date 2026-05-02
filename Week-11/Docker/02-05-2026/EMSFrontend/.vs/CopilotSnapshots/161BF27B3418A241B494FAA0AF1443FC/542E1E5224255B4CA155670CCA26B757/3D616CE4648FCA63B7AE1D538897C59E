@@ -1,0 +1,58 @@
+﻿using EMSFrontend.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EMSFrontend.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        private readonly HttpClient _httpClient;
+
+        // Injects HttpClient, make sure it is registered in Program.cs
+        // e.g. builder.Services.AddHttpClient<EmployeeController>(c => c.BaseAddress = new Uri("http://your-backend-api-url/"));
+        public EmployeeController(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var employees = new List<Employee>();
+            // Update the URL to match your backend API address
+            var response = await _httpClient.GetAsync("api/employee"); 
+            
+            if (response.IsSuccessStatusCode)
+            {
+                employees = await response.Content.ReadFromJsonAsync<List<Employee>>();
+            }
+            
+            return View(employees);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Employee employee)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(employee);
+            }
+
+            // Update the URL to match your backend API address
+            var response = await _httpClient.PostAsJsonAsync("api/employee", employee);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ModelState.AddModelError(string.Empty, "Error sending request to backend.");
+            return View(employee);
+        }
+    }
+}

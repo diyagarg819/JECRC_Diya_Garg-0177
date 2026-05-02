@@ -1,0 +1,22 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace EMSFrontend.Controllers
+{
+    public class EmployeeController : Controller
+    {
+
+        [HttpGet]
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}

@@ -1,0 +1,126 @@
+﻿using EMSFrontend.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EMSFrontend.Controllers
+{
+    public class EmployeeController : Controller
+    {
+        private readonly HttpClient _httpClient;
+
+        // Injects HttpClient, make sure it is registered in Program.cs
+        // e.g. builder.Services.AddHttpClient<EmployeeController>(c => c.BaseAddress = new Uri("http://your-backend-api-url/"));
+        public EmployeeController(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var employees = new List<Employee>();
+            // Update the URL to match your backend API address
+            var response = await _httpClient.GetAsync("api/employee"); 
+            
+            if (response.IsSuccessStatusCode)
+            {
+                employees = await response.Content.ReadFromJsonAsync<List<Employee>>();
+            }
+            
+            return View(employees);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Employee employee)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(employee);
+            }
+
+            // Update the URL to match your backend API address
+            var response = await _httpClient.PostAsJsonAsync("api/employee", employee);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ModelState.AddModelError(string.Empty, "Error sending request to backend.");
+            return View(employee);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var response = await _httpClient.GetAsync($"api/employee/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var employee = await response.Content.ReadFromJsonAsync<Employee>();
+                if (employee == null) return NotFound();
+                return View(employee);
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var response = await _httpClient.GetAsync($"api/employee/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var employee = await response.Content.ReadFromJsonAsync<Employee>();
+                if (employee == null) return NotFound();
+                return View(employee);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Employee employee)
+        {
+            if (id != employee.Id) return BadRequest();
+            if (!ModelState.IsValid) return View(employee);
+
+            var response = await _httpClient.PutAsJsonAsync($"api/employee/{id}", employee);
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ModelState.AddModelError(string.Empty, "Error sending update request to backend.");
+            return View(employee);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var response = await _httpClient.GetAsync($"api/employee/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var employee = await response.Content.ReadFromJsonAsync<Employee>();
+                if (employee == null) return NotFound();
+                return View(employee);
+            }
+            return NotFound();
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var response = await _httpClient.DeleteAsync($"api/employee/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            ModelState.AddModelError(string.Empty, "Error deleting from backend.");
+            return RedirectToAction(nameof(Delete), new { id });
+        }
+    }
+}

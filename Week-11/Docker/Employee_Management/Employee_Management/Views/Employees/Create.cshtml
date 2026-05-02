@@ -1,0 +1,78 @@
+﻿@model Employee_Management.Models.Employee
+
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+
+        <div class="mb-4">
+            <a asp-action="Index" class="text-decoration-none text-muted">
+                <i class="bi bi-arrow-left me-1"></i>Back to Directory
+            </a>
+        </div>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white py-3">
+                <h4 class="mb-0"><i class="bi bi-person-plus-fill me-2"></i>Add New Employee</h4>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="mb-4">
+                        <label asp-for="Name" class="form-label fw-semibold">
+                            <i class="bi bi-person me-1 text-primary"></i>Full Name <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="Name" class="form-control form-control-lg" placeholder="e.g. Rahul Sharma" />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Department" class="form-label fw-semibold">
+                            <i class="bi bi-building me-1 text-primary"></i>Department
+                        </label>
+                        <select asp-for="Department" class="form-select form-select-lg">
+                            <option value="">-- Select Department --</option>
+                            <option>Engineering</option>
+                            <option>Human Resources</option>
+                            <option>Finance</option>
+                            <option>Marketing</option>
+                            <option>Operations</option>
+                            <option>Sales</option>
+                            <option>Design</option>
+                            <option>Management</option>
+                        </select>
+                        <span asp-validation-for="Department" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Salary" class="form-label fw-semibold">
+                            <i class="bi bi-currency-rupee me-1 text-primary"></i>Salary (₹)
+                        </label>
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-text">₹</span>
+                            <input asp-for="Salary" class="form-control" placeholder="e.g. 50000" type="number" min="0" step="1000" />
+                        </div>
+                        <span asp-validation-for="Salary" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Cancel</a>
+                        <button type="submit" class="btn btn-primary px-5">
+                            <i class="bi bi-check-circle me-2"></i>Save Employee
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
