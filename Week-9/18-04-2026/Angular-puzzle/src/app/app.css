@@ -1,0 +1,224 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6fb;
+  color: #1a1a2e;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e4ef;
+}
+
+.badge {
+  background: #e84855;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+h1 { font-size: 28px; font-weight: 800; }
+.subtitle { color: #888; font-size: 14px; margin-top: 4px; }
+
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #555;
+  margin-bottom: 12px;
+  margin-top: 28px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e4ef;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.problem-card { border-top: 3px solid #e84855; }
+
+h2 { font-size: 17px; font-weight: 700; margin-bottom: 14px; }
+
+.desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 12.5px;
+  background: #f0f4ff;
+  color: #3d5af1;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hierarchy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  background: #f8f9fc;
+  border: 1px solid #e0e4ef;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.h-row { display: flex; align-items: center; gap: 8px; }
+.arrow { color: #bbb; font-size: 13px; }
+.comp-name { font-weight: 700; font-size: 14px; }
+
+.strategy {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.strategy.onpush  { background: #fff0f1; color: #e84855; }
+.strategy.default { background: #f0f7ff; color: #3d9be9; }
+
+.snippet-box {
+  background: #f8f9fc;
+  border: 1px solid #e0e4ef;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.snippet-label {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+pre {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  color: #2d2d2d;
+}
+
+.divider {
+  height: 1px;
+  background: #e0e4ef;
+  margin: 20px 0;
+}
+
+.questions-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.q-list { display: flex; flex-direction: column; gap: 10px; }
+
+.q-list-item {
+  background: #f4f6fb;
+  border: 1px solid #e0e4ef;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.q-list-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.q-list-label { font-weight: 800; font-size: 14px; color: #3d9be9; }
+.marks-sm     { font-size: 12px; font-weight: 700; color: #f5a623; }
+.q-list-text  { font-size: 14px; line-height: 1.6; color: #333; }
+
+.answer-card { border-left: 4px solid #ccc; }
+.card-a { border-left-color: #3d9be9; }
+.card-b { border-left-color: #f5a623; }
+.card-c { border-left-color: #2ecc71; }
+
+.q-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.q-num {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: #f0f7ff;
+  color: #3d9be9;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-b .q-num { background: #fff8ec; color: #f5a623; }
+.card-c .q-num { background: #eafaf1; color: #2ecc71; }
+
+.q-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.q-text { font-size: 15px; font-weight: 700; line-height: 1.4; }
+
+.marks {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  width: fit-content;
+  background: #f0f7ff;
+  color: #3d9be9;
+}
+
+.card-b .marks { background: #fff8ec; color: #f5a623; }
+.card-c .marks { background: #eafaf1; color: #2ecc71; }
+
+.answer-text { font-size: 14px; line-height: 1.8; color: #444; }
+
+.fixes { display: flex; flex-direction: column; gap: 12px; }
+
+.fix {
+  background: #f8f9fc;
+  border: 1px solid #e0e4ef;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.fix.best { background: #eafaf1; border-color: #a9e4c4; }
+
+.fix-title { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #333; }
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 1px;
+}

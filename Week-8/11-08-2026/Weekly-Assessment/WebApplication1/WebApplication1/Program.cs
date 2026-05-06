@@ -1,16 +1,23 @@
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    var xmlFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlFilePath = Path.Combine(AppContext.BaseDirectory, xmlFileName);
+
+    if (File.Exists(xmlFilePath))
+    {
+        options.IncludeXmlComments(xmlFilePath);
+    }
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

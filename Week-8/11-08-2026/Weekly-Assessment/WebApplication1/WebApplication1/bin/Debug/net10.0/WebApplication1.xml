@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication1</name>
+    </assembly>
+    <members>
+        <member name="T:LibraryManagement.Validation.IsbnAttribute">
+            <summary>
+            Validates ISBN-10 and ISBN-13 values, allowing spaces and hyphens in the input.
+            </summary>
+        </member>
+        <member name="M:LibraryManagement.Validation.IsbnAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Validates the supplied ISBN string against ISBN-10 and ISBN-13 checksum rules.
+            </summary>
+            <param name="value">Incoming property value.</param>
+            <param name="validationContext">Context for the current validation request.</param>
+            <returns>A success result when the ISBN is valid; otherwise a validation error.</returns>
+        </member>
+        <member name="T:LibraryManagement.Controllers.BookController">
+            <summary>
+            Exposes CRUD endpoints for managing books in the in-memory catalog.
+            </summary>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.CreateBook(LibraryManagement.dto.BookRequestDto)">
+            <summary>
+            Creates a new book entry.
+            </summary>
+            <param name="bookDto">Validated request payload for the book.</param>
+            <returns>The created book resource.</returns>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.ShowBook">
+            <summary>
+            Returns all books currently stored in the catalog.
+            </summary>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.GetBookById(System.Guid)">
+            <summary>
+            Returns a single book by its identifier.
+            </summary>
+            <param name="id">Book identifier.</param>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.UpdateBook(System.Guid,LibraryManagement.dto.BookRequestDto)">
+            <summary>
+            Updates an existing book.
+            </summary>
+            <param name="id">Identifier of the book to update.</param>
+            <param name="bookDto">Validated request payload.</param>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.DeleteBook(System.Guid)">
+            <summary>
+            Deletes a book by its identifier.
+            </summary>
+            <param name="id">Identifier of the book to remove.</param>
+        </member>
+        <member name="T:LibraryManagement.dto.BookRequestDto">
+            <summary>
+            Represents the payload required to create or update a book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.Id">
+            <summary>
+            Optional identifier supplied by the caller. A new value is generated when omitted.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.BookName">
+            <summary>
+            Display title of the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.Author">
+            <summary>
+            Author of the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.ISBN">
+            <summary>
+            ISBN-10 or ISBN-13 value.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.Genre">
+            <summary>
+            Genre or category used for grouping.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.PublishedDate">
+            <summary>
+            Publication date when known.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.TotalCopies">
+            <summary>
+            Total number of copies owned by the library.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.AvailableCopies">
+            <summary>
+            Number of copies currently available.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.Publisher">
+            <summary>
+            Publisher name when available.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookRequestDto.Language">
+            <summary>
+            Language of the book content.
+            </summary>
+        </member>
+        <member name="M:LibraryManagement.dto.BookRequestDto.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Enforces rules that depend on multiple fields together.
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.dto.BookResponseDto">
+            <summary>
+            Represents book data returned by the API.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.Id">
+            <summary>
+            Unique identifier for the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.BookName">
+            <summary>
+            Display title of the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.Author">
+            <summary>
+            Author of the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.ISBN">
+            <summary>
+            ISBN-10 or ISBN-13 identifier.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.Genre">
+            <summary>
+            Genre or category.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.PublishedDate">
+            <summary>
+            Publication date when known.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.TotalCopies">
+            <summary>
+            Total number of copies owned.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.AvailableCopies">
+            <summary>
+            Number of copies currently available.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.Publisher">
+            <summary>
+            Publisher name when available.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.dto.BookResponseDto.Language">
+            <summary>
+            Language of the book content.
+            </summary>
+        </member>
+        <member name="T:LibraryManagement.Models.Book">
+            <summary>
+            Represents a book stored by the API.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Id">
+            <summary>
+            Unique identifier for the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.BookName">
+            <summary>
+            Display title of the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Author">
+            <summary>
+            Author credited for the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.ISBN">
+            <summary>
+            ISBN-10 or ISBN-13 identifier.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Genre">
+            <summary>
+            Category or genre assigned to the book.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.PublishedDate">
+            <summary>
+            Original publication date when known.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.TotalCopies">
+            <summary>
+            Number of physical or digital copies owned.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.AvailableCopies">
+            <summary>
+            Number of copies currently available for borrowing.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Publisher">
+            <summary>
+            Publisher name when supplied.
+            </summary>
+        </member>
+        <member name="P:LibraryManagement.Models.Book.Language">
+            <summary>
+            Primary language of the book.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Controllers.WeatherForecastController">
+            <summary>
+            Provides sample weather data generated at runtime.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Controllers.WeatherForecastController.Get">
+            <summary>
+            Returns a short sample forecast for the next five days.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.WeatherForecast">
+            <summary>
+            Represents a sample weather forecast entry.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.WeatherForecast.Date">
+            <summary>
+            Forecast date.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.WeatherForecast.TemperatureC">
+            <summary>
+            Temperature in Celsius.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.WeatherForecast.TemperatureF">
+            <summary>
+            Temperature converted to Fahrenheit.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.WeatherForecast.Summary">
+            <summary>
+            Human-readable summary of the weather.
+            </summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
+            <summary>
+            Generates a documentation comment ID for a type.
+            Example: T:Namespace.Outer+Inner`1 becomes T:Namespace.Outer.Inner`1
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.PropertyInfo)">
+            <summary>
+            Generates a documentation comment ID for a property.
+            Example: P:Namespace.ContainingType.PropertyName or for an indexer P:Namespace.ContainingType.Item(System.Int32)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type,System.String)">
+            <summary>
+            Generates a documentation comment ID for a property given its container type and property name.
+            Example: P:Namespace.ContainingType.PropertyName
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.MethodInfo)">
+            <summary>
+            Generates a documentation comment ID for a method (or constructor).
+            For example:
+              M:Namespace.ContainingType.MethodName(ParamType1,ParamType2)~ReturnType
+              M:Namespace.ContainingType.#ctor(ParamType)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.GetTypeDocId(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a documentation ID string for a type.
+            This method handles nested types (replacing '+' with '.'),
+            generic types, arrays, pointers, by-ref types, and generic parameters.
+            The <paramref name="includeGenericArguments"/> flag controls whether
+            constructed generic type arguments are emitted, while <paramref name="omitGenericArity"/>
+            controls whether the generic arity marker (e.g. "`1") is appended.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.NormalizeDocId(System.String)">
+            <summary>
+            Normalizes a documentation comment ID to match the compiler-style format.
+            Strips the return type suffix for ordinary methods but retains it for conversion operators.
+            </summary>
+            <param name="docId">The documentation comment ID to normalize.</param>
+            <returns>The normalized documentation comment ID.</returns>
+        </member>
+    </members>
+</doc>

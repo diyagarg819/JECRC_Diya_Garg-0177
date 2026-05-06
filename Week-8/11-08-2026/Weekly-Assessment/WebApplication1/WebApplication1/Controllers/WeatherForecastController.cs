@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
+    /// <summary>
+    /// Provides sample weather data generated at runtime.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -11,6 +14,9 @@ namespace WebApplication1.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         ];
 
+        /// <summary>
+        /// Returns a short sample forecast for the next five days.
+        /// </summary>
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {

@@ -1,0 +1,99 @@
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <span class="badge">ANGULAR</span>
+    <div>
+      <h1>Angular Puzzle</h1>
+      <p class="subtitle">Change Detection · Task Room · 10 Marks Total</p>
+    </div>
+  </div>
+
+  <!-- Problem Statement -->
+  <p class="section-title">📋 Problem Statement</p>
+
+  <div class="card problem-card">
+    <h2>Change Detection Puzzle</h2>
+
+    <p class="desc">You have the following component hierarchy:</p>
+
+    <!-- Hierarchy -->
+    <div class="hierarchy">
+      <div
+        *ngFor="let item of hierarchy"
+        class="h-row"
+        [style.padding-left.px]="item.level * 28">
+        <span class="arrow" *ngIf="item.level > 0">└─</span>
+        <span class="comp-name">{{ item.name }}</span>
+        <span class="strategy" [ngClass]="item.strategy === 'OnPush' ? 'onpush' : 'default'">
+          {{ item.strategy }}
+        </span>
+      </div>
+    </div>
+
+    <p class="desc">
+      <strong>DashboardComponent</strong> receives
+      <code>@Input() userStats</code> from AppComponent.
+      Inside DashboardComponent, you have:
+    </p>
+
+    <div class="snippet-box">
+      <p class="snippet-label">TYPESCRIPT</p>
+      <pre>{{ puzzleCode }}</pre>
+    </div>
+
+    <p class="desc" style="margin-top:14px;">
+      After clicking a button that calls <code>updateLocally()</code>,
+      the view in <strong>DashboardComponent does NOT update</strong>,
+      but <strong>StatsComponent (child) shows the updated score</strong>.
+    </p>
+
+    <div class="divider"></div>
+
+    <p class="questions-heading">Questions:</p>
+
+    <div class="q-list">
+      <div class="q-list-item" *ngFor="let q of puzzleQuestions">
+        <div class="q-list-top">
+          <span class="q-list-label">{{ q.label }})</span>
+          <span class="marks-sm">({{ q.marks }} marks)</span>
+        </div>
+        <p class="q-list-text">{{ q.text }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Answers -->
+  <p class="section-title">✅ Answers</p>
+
+  <div
+    class="card answer-card"
+    *ngFor="let q of answers"
+    [ngClass]="'card-' + q.label">
+
+    <div class="q-header">
+      <span class="q-num">{{ q.label }}</span>
+      <div class="q-header-right">
+        <span class="q-text">{{ q.question }}</span>
+        <span class="marks">{{ q.marks }} marks</span>
+      </div>
+    </div>
+
+    <p class="answer-text" *ngIf="q.answer">{{ q.answer }}</p>
+
+    <div *ngIf="q.fixes && q.fixes.length > 0" class="fixes">
+      <div
+        class="fix"
+        *ngFor="let fix of q.fixes"
+        [ngClass]="{ best: fix.best }">
+        <p class="fix-title">{{ fix.title }}</p>
+        <pre>{{ fix.code }}</pre>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">Angular · Change Detection · OnPush · ChangeDetectorRef</div>
+
+</div>
