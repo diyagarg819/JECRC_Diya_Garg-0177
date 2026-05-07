@@ -1,0 +1,15 @@
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\bin\Debug\net10.0\New folder.exe
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\bin\Debug\net10.0\New folder.deps.json
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\bin\Debug\net10.0\New folder.runtimeconfig.json
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\bin\Debug\net10.0\New folder.dll
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\bin\Debug\net10.0\New folder.pdb
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.AssemblyInfoInputs.cache
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.AssemblyInfo.cs
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.csproj.CoreCompileInputs.cache
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.sourcelink.json
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.dll
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\refint\New folder.dll
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.pdb
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\New folder.genruntimeconfig.cache
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\New folder\obj\Debug\net10.0\ref\New folder.dll
