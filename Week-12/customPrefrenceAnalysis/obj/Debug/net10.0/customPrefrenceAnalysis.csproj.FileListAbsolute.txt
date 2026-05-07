@@ -1,0 +1,15 @@
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\bin\Debug\net10.0\customPrefrenceAnalysis.exe
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\bin\Debug\net10.0\customPrefrenceAnalysis.deps.json
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\bin\Debug\net10.0\customPrefrenceAnalysis.runtimeconfig.json
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\bin\Debug\net10.0\customPrefrenceAnalysis.dll
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\bin\Debug\net10.0\customPrefrenceAnalysis.pdb
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.AssemblyInfoInputs.cache
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.AssemblyInfo.cs
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.csproj.CoreCompileInputs.cache
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.sourcelink.json
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.dll
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\refint\customPrefrenceAnalysis.dll
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.pdb
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\customPrefrenceAnalysis.genruntimeconfig.cache
+C:\Users\Diya\OneDrive\Desktop\Capgemini_Training\Week-12\customPrefrenceAnalysis\obj\Debug\net10.0\ref\customPrefrenceAnalysis.dll
