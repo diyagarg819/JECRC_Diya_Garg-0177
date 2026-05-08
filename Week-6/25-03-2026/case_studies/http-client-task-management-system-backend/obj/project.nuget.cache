@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "hbi9WuloDqc=",
+=======
+  "dgSpecHash": "640YJCMBYJg=",
+>>>>>>> 8d6440bf (8th may task done)
   "success": true,
   "projectFilePath": "C:\\Users\\Diya\\OneDrive\\Desktop\\Capgemini_Training\\Week-6\\25-03-2026\\case_studies\\http-client-task-management-system-backend\\backend.csproj",
   "expectedPackageFiles": [],

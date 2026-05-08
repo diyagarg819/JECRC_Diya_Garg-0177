@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Pizza } from './pizza/pizza';
 
 @Component({
   selector: 'app-root',
-  imports: [Pizza],
-  template: '<app-pizza></app-pizza>',
+  imports: [RouterOutlet],
+  templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ApiGateway/ApiGateway.csproj" />
+  <Project Path="StudentAdmissionSystem/StudentAdmissionSystem.csproj" />
+  <Project Path="StudentAttendenceSystem/StudentAttendenceSystem.csproj" />
+  <Project Path="StudentManagementSystem/StudentManagementSystem.csproj" />
+</Solution>
