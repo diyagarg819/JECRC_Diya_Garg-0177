@@ -1,0 +1,34 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Hospital_dev_12345"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  hospital-api:
+    build:
+      context: ../..
+      dockerfile: src/Hospital.Api/Dockerfile
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+      Auth__SigningKey: "replace-this-with-a-long-local-development-secret"
+    ports:
+      - "5187:8080"
+    depends_on:
+      - sqlserver
+
+  hospital-web:
+    build:
+      context: ../..
+      dockerfile: web/Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - hospital-api
+
+volumes:
+  sql_data:

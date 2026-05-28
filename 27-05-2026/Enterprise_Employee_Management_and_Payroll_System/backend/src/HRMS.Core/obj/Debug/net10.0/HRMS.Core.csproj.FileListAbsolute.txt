@@ -1,0 +1,11 @@
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\bin\Debug\net10.0\HRMS.Core.deps.json
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\bin\Debug\net10.0\HRMS.Core.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\bin\Debug\net10.0\HRMS.Core.pdb
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\HRMS.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\HRMS.Core.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\HRMS.Core.AssemblyInfo.cs
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\HRMS.Core.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\HRMS.Core.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\refint\HRMS.Core.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\HRMS.Core.pdb
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Core\obj\Debug\net10.0\ref\HRMS.Core.dll

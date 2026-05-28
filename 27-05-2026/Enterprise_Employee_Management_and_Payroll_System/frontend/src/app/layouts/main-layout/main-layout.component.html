@@ -1,0 +1,112 @@
+<div class="h-screen w-screen flex overflow-hidden bg-slate-950 text-slate-100">
+  <!-- Mobile Sidebar Overlay (Edge case: responsive design for mobile/tablet) -->
+  @if (sidebarOpen) {
+    <div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-30 lg:hidden" (click)="closeSidebar()"></div>
+  }
+
+  <!-- Sidebar -->
+  <aside 
+    class="w-64 border-r border-slate-800 bg-slate-900/60 backdrop-blur-md flex flex-col z-40 transition-transform duration-300 ease-in-out"
+    [ngClass]="{
+      'fixed inset-y-0 left-0': true,
+      '-translate-x-full lg:translate-x-0': !sidebarOpen,
+      'translate-x-0': sidebarOpen
+    }">
+    <div class="h-16 flex items-center justify-between px-6 border-b border-slate-800">
+      <div class="flex items-center space-x-2">
+        <span class="material-icons text-brand-500 text-3xl">hub</span>
+        <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+          CAPGEMINI HRMS
+        </span>
+      </div>
+      <!-- Close button for mobile -->
+      <button (click)="closeSidebar()" class="lg:hidden text-slate-400 hover:text-white transition-colors p-1">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+    
+    <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+      @for (item of navItems; track item.label) {
+        @if (authService.hasRole(item.roles)) {
+          <a [routerLink]="item.route"
+             routerLinkActive="nav-link-active"
+             (click)="closeSidebar()"
+             class="flex items-center px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl transition-all duration-200 group border border-transparent">
+            <span class="material-icons mr-3 group-hover:scale-110 transition-transform">{{item.icon}}</span>
+            <span class="text-sm font-medium">{{item.label}}</span>
+          </a>
+        }
+      }
+    </nav>
+    
+    <div class="p-4 border-t border-slate-800 bg-slate-900/30">
+      <div class="flex items-center space-x-3 p-2 rounded-xl bg-slate-800/40 border border-slate-800">
+        <div class="h-10 w-10 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 font-bold">
+          {{ getSessionRole().substring(0,2).toUpperCase() }}
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-xs font-semibold text-slate-200 truncate">{{ getSessionEmail() }}</p>
+          <p class="text-[10px] text-slate-400 font-medium tracking-wide uppercase">{{ getSessionRole() }}</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <div class="flex-1 flex flex-col min-w-0 overflow-hidden lg:ml-64">
+    <!-- Header -->
+    <header class="h-16 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md flex items-center justify-between px-4 sm:px-8 z-10">
+      <div class="flex items-center space-x-4">
+        <!-- Mobile Hamburger (Edge case: responsive toggle) -->
+        <button id="sidebarToggleBtn" (click)="toggleSidebar()" class="lg:hidden text-slate-400 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-slate-800">
+          <span class="material-icons">menu</span>
+        </button>
+        <!-- Breadcrumb / Active Page Indicator -->
+        <span class="text-sm text-slate-400 font-medium uppercase tracking-wider hidden sm:block">Enterprise HR Portal</span>
+      </div>
+
+      <div class="flex items-center space-x-3 sm:space-x-6">
+        <!-- Tenant Switcher Dropdown -->
+        <div class="flex items-center space-x-2">
+          <span class="text-xs text-slate-400 font-medium hidden md:block">Tenant Context:</span>
+          <button mat-button [matMenuTriggerFor]="tenantMenu" 
+                  class="bg-slate-900/80 hover:bg-slate-800 border border-slate-800 px-3 sm:px-4 py-1.5 rounded-xl text-xs font-semibold text-brand-400 flex items-center transition-all duration-200">
+            <span class="material-icons text-sm mr-1 sm:mr-2 text-brand-500">domain</span>
+            <span class="hidden sm:inline">{{ getActiveTenantName() }}</span>
+            <span class="sm:hidden">{{ tenantService.getActiveTenant().countryCode }}</span>
+            <span class="material-icons text-sm ml-1 text-slate-500">expand_more</span>
+          </button>
+          
+          <mat-menu #tenantMenu="matMenu" class="bg-slate-900 border border-slate-800 text-slate-200 rounded-2xl shadow-2xl">
+            @for (t of tenantService.tenants; track t.id) {
+              <button mat-menu-item (click)="switchTenant(t.id)" 
+                      class="hover:bg-slate-800 flex items-center justify-between py-2.5 px-4 text-xs font-medium text-slate-300">
+                <span class="flex items-center">
+                  <span class="material-icons mr-2 text-sm text-slate-400">arrow_right_alt</span>
+                  {{ t.name }}
+                </span>
+                @if (t.id === getActiveTenantId()) {
+                  <span class="material-icons text-brand-500 text-xs ml-4">check_circle</span>
+                }
+              </button>
+            }
+          </mat-menu>
+        </div>
+
+        <div class="h-6 w-px bg-slate-800 hidden sm:block"></div>
+
+        <!-- Logout Trigger -->
+        <button id="logoutBtn" (click)="handleLogout()" 
+                class="flex items-center text-xs font-semibold text-slate-400 hover:text-red-400 transition-colors duration-200 py-1.5 px-2 sm:px-3 rounded-lg hover:bg-red-500/5 border border-transparent hover:border-red-500/10">
+          <span class="material-icons text-sm sm:mr-1.5">logout</span>
+          <span class="hidden sm:inline">Sign Out</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main View Area -->
+    <main class="flex-1 overflow-y-auto bg-slate-950 p-4 sm:p-8">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

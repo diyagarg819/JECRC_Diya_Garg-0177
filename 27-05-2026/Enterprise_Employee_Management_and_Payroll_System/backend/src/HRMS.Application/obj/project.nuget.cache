@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "1vPX3rpmAm8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dell\\Desktop\\Capgemini_Training\\27-05-2026\\backend\\src\\HRMS.Application\\HRMS.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.1.1\\fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

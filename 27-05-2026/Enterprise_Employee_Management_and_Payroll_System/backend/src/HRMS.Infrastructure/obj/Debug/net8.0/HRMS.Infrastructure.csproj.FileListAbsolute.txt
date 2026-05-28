@@ -1,0 +1,17 @@
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.AssemblyInfo.cs
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Infrastructure.deps.json
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Infrastructure.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Infrastructure.pdb
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Application.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Core.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Application.pdb
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\bin\Debug\net8.0\HRMS.Core.pdb
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Inf.BA81F186.Up2Date
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\refint\HRMS.Infrastructure.dll
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\HRMS.Infrastructure.pdb
+C:\Users\Dell\Desktop\Capgemini_Training\27-05-2026\backend\src\HRMS.Infrastructure\obj\Debug\net8.0\ref\HRMS.Infrastructure.dll

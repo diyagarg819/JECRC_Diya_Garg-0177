@@ -1,0 +1,20 @@
+{
+  "name": "hospital-platform-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.mjs --configLoader native --host 0.0.0.0",
+    "build": "vite --config vite.config.mjs --configLoader native build",
+    "preview": "vite --config vite.config.mjs --configLoader native preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.0.0",
+    "typescript": "^5.8.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@microsoft/signalr": "^9.0.0"
+  },
+  "devDependencies": {}
+}
